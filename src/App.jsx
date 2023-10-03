@@ -1,8 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
 import {
   Journals,
+  Advertisements,
+  Membership,
   Navbar,
-  About
+  About,
 } from "./components";
 
 const App = () => {
@@ -12,7 +14,11 @@ const App = () => {
         <div className="bg-hero-pattern bg-cover bg-norepeat bg-center">
           <Navbar />
         </div>
-        <Journals/>
+        <div className="casoc-body">
+          <Advertisements />
+          <Journals />
+          <Membership />
+        </div>
         <About />
       </div>
     </BrowserRouter>
