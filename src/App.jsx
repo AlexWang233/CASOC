@@ -10,7 +10,7 @@ import {
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+      <div className="relative z-0 bg-primary content">
         <Navbar />
         <div className="casoc-body">
           <Advertisements />

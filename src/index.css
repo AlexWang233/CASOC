@@ -19,6 +19,11 @@ code {
     monospace;
 }
 
+.content {
+  display: flex;
+  justify-content: center; /* Aligns child horizontally in the center */
+}
+
 .title {
   font-family: "Roboto", sans-serif; /* Using Roboto font from Google Fonts */
   font-weight: 700; /* Using the bold (700) weight */
@@ -29,6 +34,7 @@ code {
   letter-spacing: 1.5px; /* Increases spacing between letters */
   margin: 20px 0; /* Adds some margin to top and bottom */
   line-height: 1.2; /* Adjusts the spacing between lines, useful if your title wraps to multiple lines */
+  text-align: center; /* Center text */
 }
 
 /* For responsiveness, you might want to adjust the font size on smaller screens */
@@ -47,6 +53,7 @@ code {
   margin: 10px 0; /* Adds some margin to top and bottom */
   line-height: 1.3; /* Adjusts the spacing between lines, useful if your subtitle wraps to multiple lines */
   opacity: 0.9; /* Slight transparency to make it more subtle */
+  text-align: center; /* Center text */
 }
 
 /* For responsiveness, you might want to adjust the font size on smaller screens */
