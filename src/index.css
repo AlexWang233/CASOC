@@ -21,7 +21,9 @@ code {
 
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: center; /* Aligns child horizontally in the center */
+  align-items: center;
 }
 
 .title {
