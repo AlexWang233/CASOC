@@ -26,4 +26,11 @@ const communityService = {
   picture: "",
 };
 
-export { communityEvents, communityNews, insuranceFact, communityService };
+const journalList = [
+  communityEvents,
+  communityNews,
+  insuranceFact,
+  communityService,
+];
+
+export { journalList };

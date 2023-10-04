@@ -1,7 +1,25 @@
+/* eslint-disable react/prop-types */
 import React from "react";
+import { journalList } from "../constants";
 
-function Journals(props) {
-  return <div></div>;
-}
+const Journals = (props) => (
+  <div className="journals">
+    {journalList.map((article, index) => (
+      <JournalSection
+        key={`journal-${index}`}
+        title={article.title}
+        content={article.content}
+        picture={article.picture}
+      />
+    ))}
+  </div>
+);
+
+const JournalSection = ({ title, content, picture }) => (
+  <div className="journal">
+    <div className="journal-title">{title}</div>
+    <div className="journal-content">{content}</div>
+  </div>
+);
 
 export default Journals;
