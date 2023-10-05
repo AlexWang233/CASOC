@@ -26,6 +26,10 @@ code {
   align-items: center;
 }
 
+.body {
+  display: flex;
+}
+
 .title {
   font-family: "Roboto", sans-serif; /* Using Roboto font from Google Fonts */
   font-weight: 700; /* Using the bold (700) weight */
