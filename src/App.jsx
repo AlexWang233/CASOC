@@ -12,7 +12,7 @@ const App = () => {
     <BrowserRouter>
       <div className="relative z-0 bg-primary content">
         <Navbar />
-        <div className="casoc-body">
+        <div className="flex pt-10">
           <Advertisements />
           <Journals />
           <Membership />

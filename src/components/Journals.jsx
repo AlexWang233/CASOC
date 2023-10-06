@@ -16,7 +16,7 @@ const Journals = (props) => (
 );
 
 const JournalSection = ({ title, content, picture }) => (
-  <div className="journal">
+  <div className="journal min-h-[150px]">
     <div className="journal-title">{title}</div>
     <div className="journal-content">{content}</div>
   </div>

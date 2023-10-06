@@ -26,8 +26,26 @@ code {
   align-items: center;
 }
 
-.body {
-  display: flex;
+.advertisement {
+  width: 20%;
+}
+
+.journals {
+  width: 60%;
+}
+
+.membership {
+  width: 20%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.member-login {
+  height: 200px;
+}
+
+.alumni-group {
+  height: 200px;
 }
 
 .title {
