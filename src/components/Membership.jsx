@@ -24,7 +24,7 @@ const Membership = () => {
         {(close) => (
           <div className="modal w-full h-full">
             {!viewTerms ? (
-              <form>
+              <form className="register-form flex flex-col justify-between m-4">
                 <label>
                   会员姓名：
                   <input type="text" name="name" />
@@ -86,8 +86,15 @@ const Membership = () => {
                   placeholder="Add your text"
                 />
                 <br />
-                <button onClick={() => setViewTerms(true)}>查看服务条款</button>
-                <input type="submit" value="提交" />
+                <div className="flex justify-center">
+                  <button
+                    className="w-40 mr-2"
+                    onClick={() => setViewTerms(true)}
+                  >
+                    查看服务条款
+                  </button>
+                  <input type="submit" value="提交" />
+                </div>
               </form>
             ) : (
               <div className="service-section flex flex-col justify-between m-4">

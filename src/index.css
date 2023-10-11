@@ -101,6 +101,19 @@ code {
   border: 1px solid #cfcece;
 }
 
+.register-form {
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+}
+
+.register-form label {
+  display: flex;
+  justify-content: space-between;
+}
+.register-form label input {
+  min-width: 240px;
+}
+
 .service-section {
   width: calc(100% - 32px);
   height: calc(100% - 32px);
