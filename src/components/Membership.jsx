@@ -25,10 +25,20 @@ const Membership = () => {
           <div className="modal w-full h-full">
             {!viewTerms ? (
               <form className="register-form flex flex-col justify-between m-4">
-                <label>
-                  会员姓名：
-                  <input type="text" name="name" />
-                </label>
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Email address"
+                  className="mb-3"
+                >
+                  <Form.Control type="email" placeholder="name@example.com" />
+                </FloatingLabel>
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="会员姓名"
+                  className="mb-3"
+                >
+                  <Form.Control type="text" />
+                </FloatingLabel>
                 <br />
                 <label>
                   毕业院校：
