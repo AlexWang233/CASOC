@@ -25,77 +25,150 @@ const Membership = () => {
           <div className="modal w-full h-full">
             {!viewTerms ? (
               <form className="register-form flex flex-col justify-between m-4">
-                <FloatingLabel
-                  controlId="floatingInput"
-                  label="Email address"
-                  className="mb-3"
-                >
-                  <Form.Control type="email" placeholder="name@example.com" />
-                </FloatingLabel>
-                <FloatingLabel
-                  controlId="floatingInput"
-                  label="会员姓名"
-                  className="mb-3"
-                >
-                  <Form.Control type="text" />
-                </FloatingLabel>
-                <br />
-                <label>
-                  毕业院校：
-                  <input type="text" name="name" />
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    会员姓名
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    毕业院校
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    毕业年份
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    居住地邮编
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    生日(Optional)
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    性别 (Optional)：
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    家庭地址 (Optional)：
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    移动电话 (Optional)：
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
+                    职业 (Optional)：
+                  </label>
+                </div>
+                <label htmlFor="message" className="member-form-textarea-label">
+                  希望社区能够提供的服务：
                 </label>
-                <br />
-                <label>
-                  毕业年份：
-                  <input type="text" name="name" />
-                </label>
-                <br />
-                <label>
-                  居住地邮编：
-                  <input type="text" name="name" />
-                </label>
-                <br />
-                <label>
-                  生日 (Optional)：
-                  <input type="text" name="name" />
-                </label>
-                <br />
-                <label>
-                  性别 (Optional)：
-                  <input type="text" name="name" />
-                </label>
-                <br />
-                <label>
-                  家庭地址 (Optional)：
-                  <input type="text" name="name" />
-                </label>
-                <br />
-                <label>
-                  移动电话 (Optional)：
-                  <input type="text" name="name" />
-                </label>
-                <br />
-                <label>
-                  职业 (Optional)：
-                  <input type="text" name="name" />
-                </label>
-                <br />
-                <label>希望社区能够提供的服务：</label> <br />
                 <textarea
-                  rows={5}
-                  cols={50}
-                  wrap="soft"
-                  placeholder="Add your text"
-                />
-                <br />
-                <label>希望能参加的社区活动：</label> <br />
+                  id="message"
+                  rows="4"
+                  className="member-form-textarea"
+                  placeholder="Write your thoughts here..."
+                ></textarea>
+                <label htmlFor="message" className="member-form-textarea-label">
+                  希望能参加的社区活动：
+                </label>
                 <textarea
-                  rows={5}
-                  cols={50}
-                  wrap="soft"
-                  placeholder="Add your text"
-                />
-                <br />
+                  id="message"
+                  rows="4"
+                  className="member-form-textarea"
+                  placeholder="Write your thoughts here..."
+                ></textarea>
                 <div className="flex justify-center">
                   <button
                     className="w-40 mr-2"
