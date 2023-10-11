@@ -24,12 +24,19 @@
 }
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  margin: 0;
+}
+
+html,
+#root,
+#root > div {
+  height: 100%;
 }
 
 code {
@@ -40,20 +47,19 @@ code {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Aligns child horizontally in the center */
   align-items: center;
 }
 
 .advertisement {
-  width: 20%;
+  width: 15%;
 }
 
 .journals {
-  width: 60%;
+  width: 70%;
 }
 
 .membership {
-  width: 20%;
+  width: 15%;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -69,12 +75,12 @@ code {
 .title {
   font-family: "Roboto", sans-serif; /* Using Roboto font from Google Fonts */
   font-weight: 700; /* Using the bold (700) weight */
-  font-size: 2.5em; /* This is equivalent to 40px. Adjust as necessary */
+  font-size: 32px; /* This is equivalent to 40px. Adjust as necessary */
   color: #333333; /* Dark gray color. Adjust to your liking */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
   text-transform: uppercase; /* Makes the text all uppercase */
   letter-spacing: 1.5px; /* Increases spacing between letters */
-  margin: 20px 0; /* Adds some margin to top and bottom */
+  margin: 12px 0; /* Adds some margin to top and bottom */
   line-height: 1.2; /* Adjusts the spacing between lines, useful if your title wraps to multiple lines */
   text-align: center; /* Center text */
 }
@@ -82,18 +88,18 @@ code {
 /* For responsiveness, you might want to adjust the font size on smaller screens */
 @media (max-width: 768px) {
   .header-title {
-    font-size: 2em; /* Reduced font size for smaller screens */
+    font-size: 28px; /* Reduced font size for smaller screens */
   }
 }
 .subtitle {
   font-family: "Roboto", sans-serif; /* Using Roboto font from Google Fonts */
   font-weight: 400; /* Normal font weight, so it's lighter than the main title */
-  font-size: 1.5em; /* Adjust based on your subtitle size preference */
+  font-size: 22px; /* Adjust based on your subtitle size preference */
   color: #555555; /* Slightly lighter gray than the main title for visual hierarchy */
   text-transform: capitalize; /* First letter of each word is capitalized */
   letter-spacing: 1px; /* Slight letter spacing */
   margin: 10px 0; /* Adds some margin to top and bottom */
-  line-height: 1.3; /* Adjusts the spacing between lines, useful if your subtitle wraps to multiple lines */
+  line-height: 1; /* Adjusts the spacing between lines, useful if your subtitle wraps to multiple lines */
   opacity: 0.9; /* Slight transparency to make it more subtle */
   text-align: center; /* Center text */
 }
@@ -101,7 +107,7 @@ code {
 /* For responsiveness, you might want to adjust the font size on smaller screens */
 @media (max-width: 768px) {
   .subtitle {
-    font-size: 1.2em; /* Reduced font size for smaller screens */
+    font-size: 20px; /* Reduced font size for smaller screens */
   }
 }
 
@@ -144,4 +150,8 @@ code {
 
 .service-section p {
   margin: 0;
+}
+
+.about-us {
+  width: 15%;
 }
