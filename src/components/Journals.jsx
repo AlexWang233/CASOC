@@ -3,7 +3,7 @@ import React from "react";
 import { journalList } from "../constants";
 
 const Journals = (props) => (
-  <div className="journals flex flex-col justify-between">
+  <div className="journals flex flex-col justify-between pb-4">
     {journalList.map((article, index) => (
       <JournalSection
         key={`journal-${index}`}
