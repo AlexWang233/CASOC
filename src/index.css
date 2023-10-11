@@ -100,3 +100,21 @@ code {
   border-radius: 18px;
   border: 1px solid #cfcece;
 }
+
+.service-section {
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+}
+
+.service-section h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.service-section h2 {
+  font-size: 20px;
+}
+
+.service-section p {
+  margin: 0;
+}
