@@ -185,14 +185,14 @@ const Membership = () => {
                   className="member-form-textarea"
                   placeholder="Write your thoughts here..."
                 ></textarea>
-                <div className="flex justify-center">
+                <div className="flex justify-center mb-2">
                   <button
                     className="w-40 mr-2"
                     onClick={() => setViewTerms(true)}
                   >
                     查看服务条款
                   </button>
-                  <input type="submit" value="提交" />
+                  <input type="submit" value="提交会员注册" />
                 </div>
               </form>
             ) : (
@@ -236,7 +236,7 @@ const Membership = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-2">
                   <label className="w-40 mr-2">
                     <input type="checkbox" />
                     我同意服务条款

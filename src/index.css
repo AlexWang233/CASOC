@@ -70,6 +70,7 @@ code {
 
 .alumni-group {
   height: calc(100% - 200px);
+  min-height: 200px;
 }
 
 .title {
