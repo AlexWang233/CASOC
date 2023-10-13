@@ -92,6 +92,20 @@ const Membership = () => {
                     htmlFor="floating_outlined"
                     className="member-form-label"
                   >
+                    电子邮箱
+                  </label>
+                </div>
+                <div className="member-form-section">
+                  <input
+                    type="text"
+                    id="floating_outlined"
+                    className="member-form-input peer"
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="floating_outlined"
+                    className="member-form-label"
+                  >
                     生日(Optional)
                   </label>
                 </div>

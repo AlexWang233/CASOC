@@ -21,7 +21,7 @@ const JournalSection = ({ title, content, picture, color }) => (
     className={`border-2 border-${color} journal min-h-[120px] rounded-md p-2 h-fit mt-2 mb-2`}
   >
     <p className={`text-${color} text-lg mb-1 `}>{title}</p>
-    <p className="text-base">{content}</p>
+    <p className="text-base journal">{content}</p>
   </div>
 );
 
