@@ -17,16 +17,15 @@ const Membership = () => {
           </div>
         }
         contentStyle={{
-          width: "10%",
-          height: "10%",
-          minHeight: "800px",
-          minWidth: "800px",
+          width: "90%",
+          height: "90%",
+          maxWidth: "800px",
         }}
       >
         {(close) => (
           <div className="modal w-full h-full">
             {!viewTerms ? (
-              <form className="register-form flex flex-col justify-between m-4">
+              <form className="register-form flex flex-col justify-between m-4 gap-y-2 overflow-auto">
                 <div className="member-form-section">
                   <input
                     type="text"
@@ -198,7 +197,7 @@ const Membership = () => {
             ) : (
               <div className="service-section flex flex-col justify-between m-4 w-full h-full">
                 <h1>Terms of Service</h1>
-                <div className="border-2 border-grey-300 h-full flex flex-col justify-between p-4 mt-4 mb-4">
+                <div className="border-2 border-grey-300 h-full flex flex-col justify-between p-4 pb-6 pt-6 mt-4 mb-4 bg-gray-50">
                   <div>
                     <h2>Consent：</h2>
                     <p>
