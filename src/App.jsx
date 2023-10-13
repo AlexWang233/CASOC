@@ -10,9 +10,9 @@ import {
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="z-0 m-0 bg-primary content divide-y divide-blue-200 h-full">
+      <div className="z-0 m-0 bg-primary content divide-y divide-blue-200 h-full overflow-auto">
         <Navbar />
-        <div className="flex pt-4 pb-4 min-h-[600px] h-full">
+        <div className="flex pt-4 pb-4 min-h-[600px] h-full overflow-auto">
           <Advertisements />
           <Journals />
           <Membership />
