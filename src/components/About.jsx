@@ -2,7 +2,7 @@ import React from "react";
 
 function About(props) {
   return (
-    <div className="w-full min-h-[80px] flex flex-col justify-center">
+    <div className="w-full min-h-[80px] flex flex-col justify-center bg-[#bcaaa4]">
       <div className="about-us content-start text-center">
         About US Disclaimers
       </div>

@@ -5,13 +5,15 @@ import "reactjs-popup/dist/index.css";
 const Membership = () => {
   const [viewTerms, setViewTerms] = useState(false);
   return (
-    <div className="membership">
+    <div className="membership h-full flex flex-col">
       <Popup
         modal
         nested
         trigger={
-          <div className="member-login flex justify-center">
-            <button className="h-fit">会员入口</button>
+          <div className="member-login flex justify-center  bg-blue-100">
+            <button className="h-fit mt-4 border-2 p-1 rounded-md bg-indigo-200 border-blue-700">
+              会员入口
+            </button>
           </div>
         }
         contentStyle={{
@@ -251,8 +253,8 @@ const Membership = () => {
           </div>
         )}
       </Popup>
-      <div className="alumni-group flex justify-center">
-        <div className="text-center">校友群链接</div>
+      <div className="alumni-group flex justify-center bg-cyan-100">
+        <div className="text-center mt-4">校友群链接</div>
       </div>
     </div>
   );

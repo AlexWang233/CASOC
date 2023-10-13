@@ -69,7 +69,7 @@ code {
 }
 
 .alumni-group {
-  height: 200px;
+  height: calc(100% - 200px);
 }
 
 .title {
