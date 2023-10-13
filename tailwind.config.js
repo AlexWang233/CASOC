@@ -4,5 +4,11 @@ export default {
   theme: {
     extend: {},
   },
+  safelist: [
+    {
+      pattern:
+        /(border|text)-(rose|indigo|purple|red|green|blue)-(100|200|300|400|500|600)/,
+    },
+  ],
   plugins: [],
 };
