@@ -13,7 +13,7 @@ const Journals = (props) => (
 );
 
 const JournalSection = ({ article }) => {
-  const { title, summary, picture, color } = article;
+  const { title, summary, content, picture, color } = article;
   const borderColor = "border-" + color;
   return (
     <Popup
@@ -34,10 +34,23 @@ const JournalSection = ({ article }) => {
       }}
     >
       {(close) => (
-        <div className="modal w-full h-full overflow-x-auto">
-          <div className="service-section flex flex-col gap-y-4 m-4 w-full h-full">
-            <h1 className="m-4 text-lg">{title}</h1>
-            <div className="overflow-auto">{summary}</div>
+        <div className="modal w-full h-full">
+          <div className="service-section m-4 w-full h-full">
+            <h1 className="m-4 p-2 text-lg">{title}</h1>
+            <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto max-h-[90%]">
+              {content
+                ? content.map((section, index) =>
+                    section[0] == "text" ? (
+                      <p className="p-2">{section[1]}</p>
+                    ) : (
+                      <img
+                        className="max-w-[80%] w-auto h-auto p-2"
+                        src={section[1]}
+                      />
+                    )
+                  )
+                : summary}
+            </div>
           </div>
           <button className="close" onClick={close}>
             &times;
