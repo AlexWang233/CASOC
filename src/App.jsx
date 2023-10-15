@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import {
   Journals,
   Advertisements,
-  Membership,
+  AlumniGroupLink,
   Navbar,
   About,
 } from "./components";
@@ -15,7 +15,7 @@ const App = () => {
         <div className="flex pt-4 pb-4 min-h-[600px] h-full">
           <Advertisements />
           <Journals />
-          <Membership />
+          <AlumniGroupLink />
         </div>
         <About />
       </div>

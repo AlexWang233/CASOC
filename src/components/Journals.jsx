@@ -5,7 +5,7 @@ import "reactjs-popup/dist/index.css";
 import { journalList } from "../constants";
 
 const Journals = (props) => (
-  <div className="journals flex flex-col justify-between pb-4 min-h-[100%] h-fit">
+  <div className="journals flex flex-col justify-between ml-4 mr-4 min-h-[100%] h-fit">
     {journalList.map((article, index) => (
       <JournalSection article={article} key={`journal-${index}`} />
     ))}

@@ -10,8 +10,8 @@ const Membership = () => {
         modal
         nested
         trigger={
-          <div className="member-login flex justify-center  bg-blue-100">
-            <button className="h-fit mt-4 border-2 p-1 rounded-md bg-indigo-200 border-blue-700">
+          <div className="member-login flex justify-center h-full bg-blue-100  items-center">
+            <button className="h-fit border-2 p-1 m-2 rounded-md bg-indigo-200 border-blue-700 min-h-[40%] min-w-[40%]">
               会员入口
             </button>
           </div>
@@ -252,9 +252,6 @@ const Membership = () => {
           </div>
         )}
       </Popup>
-      <div className="alumni-group flex justify-center bg-cyan-100">
-        <div className="text-center mt-4">校友群链接</div>
-      </div>
     </div>
   );
 };

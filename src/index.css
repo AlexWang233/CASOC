@@ -58,19 +58,20 @@ code {
   width: 70%;
 }
 
-.membership {
+.logo-section {
   width: 15%;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
-.member-login {
-  height: 200px;
+.title-section {
+  width: 70%;
+}
+
+.membership {
+  width: 15%;
 }
 
 .alumni-group {
-  height: calc(100% - 200px);
-  min-height: 200px;
+  width: 15%;
 }
 
 .title {
