@@ -1,7 +1,7 @@
 import * as assets from "../assets";
 
-const communityEvents = {
-  title: "社区活动",
+const communityNews = {
+  title: "社区新闻",
   summary:
     "(测试用）清华大学于安大略省成功举办了一场中加文化交流活动。此活动汇聚了两国知名学者、艺术家与学生，共同探讨教育、科技与艺术的前沿进展。活动现场设有中式书画展、科技成果演示以及中加合作项目的讨论。此次交流不仅深化了两地学术合作，还为在加的中国留学生提供了一个展示自己才华的平台。",
   content: [
@@ -29,8 +29,8 @@ const communityEvents = {
   color: "rose-600",
 };
 
-const communityNews = {
-  title: "社区新闻",
+const communityInfo = {
+  title: "校友风采",
   summary:
     "(测试用）安大略省华人社区近日举办了一场盛大的中秋节庆祝活动。位于多伦多的华人文化中心内，人们聚集观看精彩的舞狮、舞龙表演，品尝月饼及传统美食。同时，社区还为孩子们设立了灯笼制作工坊。活动中，当地政府代表也应邀出席，与华人社区领袖共同讲话，强调多元文化的和谐共处。这次的中秋庆典不仅展现了华人的传统文化，更促进了安大略省多元文化社群间的交流与理解。",
   picture: "",
@@ -54,10 +54,17 @@ const communityService = {
 };
 
 const journalList = [
-  communityEvents,
   communityNews,
+  communityInfo,
   insuranceFact,
   communityService,
 ];
 
-export { journalList };
+const cscAd = {
+  img: assets.csc,
+  info: "(测试用）CSC Insurance 是一家全球性的保险公司，致力于为客户提供创新和量身定制的保险解决方案。公司的产品和服务涵盖了生活、健康、车辆和产业保险等多个领域。CSC Insurance借助先进的技术和数字化工具，提供了一个简易和透明的购买流程，以及高效的理赔服务。公司的核心价值观是以客户为中心，不断创新，并维持对所有利益相关者的诚信和责任。",
+};
+
+const adsList = [cscAd];
+
+export { journalList, adsList };
