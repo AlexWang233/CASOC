@@ -6,7 +6,7 @@ import "reactjs-popup/dist/index.css";
 const Advertisements = (props) => {
   return (
     <div className="advertisement bg-gray-300 flex flex-col min-h-[100%] h-fit pb-4">
-      <div className="text-center pt-4">广告位招租</div>
+      <div className="text-center pt-4">友情赞助</div>
       {adsList.map((ad, index) => (
         <AdvertisementSection ad={ad} key={`ad-${index}`} />
       ))}
