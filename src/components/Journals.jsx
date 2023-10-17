@@ -20,12 +20,14 @@ const JournalListSection = ({ journal }) => {
   const { color, content, title } = journal;
   return (
     <div
-      className={`border-2 border-solid border-${color} min-h-[120px] max-h-[144px] rounded-md p-2 h-fit mt-2 mb-2 flex flex-col items-center overflow-auto`}
+      className={`border-2 border-solid border-${color} min-h-[120px] max-h-[144px] rounded-md p-2 h-fit mt-2 mb-2 flex flex-col items-center`}
     >
       <p className={`text-${color} text-xl mb-1`}>{title}</p>
-      {content.map((article, index) => (
-        <ArticleSection article={article} key={`article-${index}`} />
-      ))}
+      <div className=" overflow-auto flex flex-col items-center w-full">
+        {content.map((article, index) => (
+          <ArticleSection article={article} key={`article-${index}`} />
+        ))}
+      </div>
     </div>
   );
 };
@@ -39,7 +41,7 @@ const ArticleSection = ({ article }) => {
       trigger={
         <button>
           <p
-            className={`text-${color} text-base mb-1 border-b-2 border-${color} `}
+            className={`text-${color} text-base mb-1 border-b-2 border-${color} w-fit`}
           >
             {title}
           </p>
