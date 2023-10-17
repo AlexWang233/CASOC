@@ -99,7 +99,7 @@ const event4 = {
 const communityNews = {
   type: "list",
   title: "社区活动",
-  content: [event1, event2, event3],
+  content: [event1, event2, event3, event4],
   color: "rose-600",
 };
 

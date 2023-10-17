@@ -23,7 +23,7 @@ const JournalListSection = ({ journal }) => {
       className={`border-2 border-solid border-${color} min-h-[120px] max-h-[144px] rounded-md p-2 h-fit mt-2 mb-2 flex flex-col items-center`}
     >
       <p className={`text-${color} text-xl mb-1`}>{title}</p>
-      <div className=" overflow-auto flex flex-col items-center w-full">
+      <div className=" overflow-auto flex flex-col items-center w-full w-max-full pl-4 pr-4">
         {content.map((article, index) => (
           <ArticleSection article={article} key={`article-${index}`} />
         ))}
@@ -39,9 +39,9 @@ const ArticleSection = ({ article }) => {
       modal
       nested
       trigger={
-        <button>
+        <button className="max-w-full flex justify-center">
           <p
-            className={`text-${color} text-base mb-1 border-b-2 border-${color} w-fit`}
+            className={`text-${color} text-base mb-1 border-b-2 border-${color} w-fit  truncate max-h-[26px]  max-w-[100%]`}
           >
             {title}
           </p>
@@ -57,7 +57,7 @@ const ArticleSection = ({ article }) => {
         <div className="modal w-full h-full">
           <div className="service-section m-4 w-full h-full">
             <h1 className="m-4 p-2 text-lg">{title}</h1>
-            <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto max-h-[90%]">
+            <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto">
               {content
                 ? content.map((section, index) =>
                     section[0] == "text" ? (
