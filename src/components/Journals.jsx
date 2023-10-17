@@ -20,7 +20,7 @@ const JournalListSection = ({ journal }) => {
   const { color, content, title } = journal;
   return (
     <div
-      className={`border-2 border-solid border-${color} min-h-[120px] rounded-md p-2 h-fit mt-2 mb-2 flex flex-col items-center`}
+      className={`border-2 border-solid border-${color} min-h-[120px] max-h-[144px] rounded-md p-2 h-fit mt-2 mb-2 flex flex-col items-center overflow-auto`}
     >
       <p className={`text-${color} text-xl mb-1`}>{title}</p>
       {content.map((article, index) => (
@@ -62,7 +62,7 @@ const ArticleSection = ({ article }) => {
                       <p className="p-2">{section[1]}</p>
                     ) : (
                       <img
-                        className="max-w-[80%] w-auto h-auto p-2"
+                        className="max-w-[90%] w-auto h-auto p-2"
                         src={section[1]}
                       />
                     )
@@ -110,7 +110,7 @@ const JournalSection = ({ journal }) => {
                       <p className="p-2">{section[1]}</p>
                     ) : (
                       <img
-                        className="max-w-[80%] w-auto h-auto p-2"
+                        className="max-w-[90%] w-auto h-auto p-2"
                         src={section[1]}
                       />
                     )

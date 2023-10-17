@@ -76,11 +76,22 @@ const event3 = {
     [
       "text",
       "2023 年 8 月 13日，2023 “周建成•TQC建筑杯”高校草地排球赛在万锦市Bayview Reservoir Park成功举办。高校草地排球赛是多年来高校社区的传统活动。西安电子科技大学加拿大校友会已经连续三届举办了此项活动，今年共有由46个校友会组成的32支球队经过小组循环赛后分入A、B两个组别，并经过激烈的淘汰赛决出最终的名次。",
-      "img",
-      assets.event3_1,
-      "img",
-      assets.event3_2,
     ],
+    ["img", assets.event3_1],
+    ["img", assets.event3_2],
+  ],
+  color: "orange-300",
+};
+
+const event4 = {
+  title: "2023 “周建成•TQC建筑杯”高校草地排球赛在万锦市成功举办",
+  content: [
+    [
+      "text",
+      "2023 年 8 月 13日，2023 “周建成•TQC建筑杯”高校草地排球赛在万锦市Bayview Reservoir Park成功举办。高校草地排球赛是多年来高校社区的传统活动。西安电子科技大学加拿大校友会已经连续三届举办了此项活动，今年共有由46个校友会组成的32支球队经过小组循环赛后分入A、B两个组别，并经过激烈的淘汰赛决出最终的名次。",
+    ],
+    ["img", assets.event3_1],
+    ["img", assets.event3_2],
   ],
   color: "orange-300",
 };
@@ -121,8 +132,8 @@ const communityService = {
 
 const journalList = [
   communityNews,
-  insuranceFact,
   communityInfo,
+  insuranceFact,
   communityService,
 ];
 
