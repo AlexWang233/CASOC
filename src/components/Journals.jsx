@@ -57,14 +57,17 @@ const ArticleSection = ({ article }) => {
         <div className="modal w-full h-full">
           <div className="service-section m-4 w-full h-full">
             <h1 className="m-4 p-2 text-lg">{title}</h1>
-            <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto">
+            <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto h-[calc(100%-100px)]">
               {content
                 ? content.map((section, index) =>
                     section[0] == "text" ? (
-                      <p className="p-2">{section[1]}</p>
+                      <p className="p-2" key={`article-p-${index}`}>
+                        {section[1]}
+                      </p>
                     ) : (
                       <img
                         className="max-w-[90%] w-auto h-auto p-2"
+                        key={`article-img-${index}`}
                         src={section[1]}
                       />
                     )

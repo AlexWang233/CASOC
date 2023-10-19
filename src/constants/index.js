@@ -144,4 +144,24 @@ const cscAd = {
 
 const adsList = [cscAd];
 
-export { journalList, adsList };
+const aboutUs = {
+  title: "About Us",
+  content: [
+    "Founded to celebrate the unique blend of Chinese traditions and Canadian multicultural values, the Chinese Alumni Society of Canada (CASC) has grown to become a vital network for Chinese alumni nationwide. Our mission is to deepen connections among alumni, fostering both professional and personal growth. We cherish the experiences our members gained in Canada and work to ensure those memories continue to enrich their lives.",
+    "At the heart of CASC lies a commitment to community. Through events and mentorship programs, we not only cultivate a sense of belonging but also bridge the gap between our members and the broader Canadian society. Collaboration with educational institutions and businesses magnifies our impact, offering scholarships and spearheading community initiatives.",
+    "As we look to the future, CASC embraces the digital age, investing in platforms that enhance connectivity, ensuring our community remains vibrant, empowered, and inspired.",
+  ],
+};
+
+const disclaimer = {
+  title: "Disclaimer",
+  content: [
+    "This website is the official platform of the Chinese Alumni Society of Canada (CASOC). While we make every effort to ensure the accuracy and currency of the information presented, all content, information, and materials provided herein are for reference purposes only. CASOC shall not be liable for any direct or indirect losses arising from reliance on the information available on this website.",
+    "Links to third-party sites or references to third-party content are provided for the convenience of our users. CASOC holds no responsibility for the content or accuracy of these external sites. Users are encouraged to exercise discretion and judgment when accessing third-party links.",
+    "We recommend users to further verify and seek expert consultation before relying on any information presented. By using this website, you agree to and accept the terms and conditions outlined in this disclaimer.",
+  ],
+};
+
+const footerList = [aboutUs, disclaimer];
+
+export { journalList, adsList, footerList };

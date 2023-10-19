@@ -55,7 +55,8 @@ code {
 }
 
 .journals {
-  width: 70%;
+  min-width: 70%;
+  width: 100%;
 }
 
 .logo-section {
