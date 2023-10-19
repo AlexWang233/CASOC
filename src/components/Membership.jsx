@@ -5,7 +5,7 @@ import "reactjs-popup/dist/index.css";
 const Membership = () => {
   const [viewTerms, setViewTerms] = useState(false);
   return (
-    <div className="membership h-full flex flex-col">
+    <div className="membership h-full flex flex-col max-w-[200px]">
       <Popup
         modal
         nested

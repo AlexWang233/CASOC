@@ -5,7 +5,7 @@ import Membership from "./Membership";
 function Navbar(props) {
   return (
     <div className="flex w-full bg-sky-200 h-fit">
-      <div className="logo-section flex items-center">
+      <div className="logo-section flex items-center max-w-[200px]">
         <img src={logo} alt="Logo" className="h-full w-auto max-h-[128px]" />
       </div>
       <div className="title-section">

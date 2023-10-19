@@ -64,7 +64,8 @@ code {
 }
 
 .title-section {
-  width: 70%;
+  min-width: 70%;
+  width: 100%;
 }
 
 .membership {
