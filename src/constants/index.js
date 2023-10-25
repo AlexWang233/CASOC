@@ -139,7 +139,13 @@ const journalList = [
 
 const cscAd = {
   img: assets.csc,
-  info: "(测试用）CSC Insurance 是一家全球性的保险公司，致力于为客户提供创新和量身定制的保险解决方案。公司的产品和服务涵盖了生活、健康、车辆和产业保险等多个领域。CSC Insurance借助先进的技术和数字化工具，提供了一个简易和透明的购买流程，以及高效的理赔服务。公司的核心价值观是以客户为中心，不断创新，并维持对所有利益相关者的诚信和责任。",
+  content: [
+    ["img", assets.csc],
+    [
+      "text",
+      "(测试用）CSC Insurance 是一家全球性的保险公司，致力于为客户提供创新和量身定制的保险解决方案。公司的产品和服务涵盖了生活、健康、车辆和产业保险等多个领域。CSC Insurance借助先进的技术和数字化工具，提供了一个简易和透明的购买流程，以及高效的理赔服务。公司的核心价值观是以客户为中心，不断创新，并维持对所有利益相关者的诚信和责任。",
+    ],
+  ],
 };
 
 const adsList = [cscAd];
@@ -147,18 +153,36 @@ const adsList = [cscAd];
 const aboutUs = {
   title: "About Us",
   content: [
-    "Founded to celebrate the unique blend of Chinese traditions and Canadian multicultural values, the Chinese Alumni Society of Canada (CASC) has grown to become a vital network for Chinese alumni nationwide. Our mission is to deepen connections among alumni, fostering both professional and personal growth. We cherish the experiences our members gained in Canada and work to ensure those memories continue to enrich their lives.",
-    "At the heart of CASC lies a commitment to community. Through events and mentorship programs, we not only cultivate a sense of belonging but also bridge the gap between our members and the broader Canadian society. Collaboration with educational institutions and businesses magnifies our impact, offering scholarships and spearheading community initiatives.",
-    "As we look to the future, CASC embraces the digital age, investing in platforms that enhance connectivity, ensuring our community remains vibrant, empowered, and inspired.",
+    [
+      "text",
+      "Founded to celebrate the unique blend of Chinese traditions and Canadian multicultural values, the Chinese Alumni Society of Canada (CASC) has grown to become a vital network for Chinese alumni nationwide. Our mission is to deepen connections among alumni, fostering both professional and personal growth. We cherish the experiences our members gained in Canada and work to ensure those memories continue to enrich their lives.",
+    ],
+    [
+      "text",
+      "At the heart of CASC lies a commitment to community. Through events and mentorship programs, we not only cultivate a sense of belonging but also bridge the gap between our members and the broader Canadian society. Collaboration with educational institutions and businesses magnifies our impact, offering scholarships and spearheading community initiatives.",
+    ],
+    [
+      "text",
+      "As we look to the future, CASC embraces the digital age, investing in platforms that enhance connectivity, ensuring our community remains vibrant, empowered, and inspired.",
+    ],
   ],
 };
 
 const disclaimer = {
   title: "Disclaimer",
   content: [
-    "This website is the official platform of the Chinese Alumni Society of Canada (CASOC). While we make every effort to ensure the accuracy and currency of the information presented, all content, information, and materials provided herein are for reference purposes only. CASOC shall not be liable for any direct or indirect losses arising from reliance on the information available on this website.",
-    "Links to third-party sites or references to third-party content are provided for the convenience of our users. CASOC holds no responsibility for the content or accuracy of these external sites. Users are encouraged to exercise discretion and judgment when accessing third-party links.",
-    "We recommend users to further verify and seek expert consultation before relying on any information presented. By using this website, you agree to and accept the terms and conditions outlined in this disclaimer.",
+    [
+      "text",
+      "This website is the official platform of the Chinese Alumni Society of Canada (CASOC). While we make every effort to ensure the accuracy and currency of the information presented, all content, information, and materials provided herein are for reference purposes only. CASOC shall not be liable for any direct or indirect losses arising from reliance on the information available on this website.",
+    ],
+    [
+      "text",
+      "Links to third-party sites or references to third-party content are provided for the convenience of our users. CASOC holds no responsibility for the content or accuracy of these external sites. Users are encouraged to exercise discretion and judgment when accessing third-party links.",
+    ],
+    [
+      "text",
+      "We recommend users to further verify and seek expert consultation before relying on any information presented. By using this website, you agree to and accept the terms and conditions outlined in this disclaimer.",
+    ],
   ],
 };
 

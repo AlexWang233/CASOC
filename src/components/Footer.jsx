@@ -35,11 +35,14 @@ const FooterSection = ({ props }) => {
       {(close) => (
         <div className="modal w-full h-full flex flex-col justify-around items-center p-4">
           <h1 className="text-xl">{title}</h1>
-          {content.map((paragraph, index) => (
-            <p className="text-base pb-2" key={`footer-p-${index}`}>
-              {paragraph}
-            </p>
-          ))}
+          {content.map(
+            (paragraph, index) =>
+              paragraph[0] == "text" && (
+                <p className="text-base pb-2" key={`footer-p-${index}`}>
+                  {paragraph[1]}
+                </p>
+              )
+          )}
           <button className="close" onClick={close}>
             &times;
           </button>

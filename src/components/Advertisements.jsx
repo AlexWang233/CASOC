@@ -15,7 +15,7 @@ const Advertisements = (props) => {
 };
 
 const AdvertisementSection = ({ ad }) => {
-  const { img, info } = ad;
+  const { img, content } = ad;
   return (
     <Popup
       modal
@@ -34,8 +34,16 @@ const AdvertisementSection = ({ ad }) => {
     >
       {(close) => (
         <div className="modal w-full h-full flex flex-col justify-around items-center">
-          <img className="w-[75%] h-auto" src={img} />
-          <p className="text-lg p-2">{info}</p>
+          {content.map((section, index) => {
+            if (section[0] == "text")
+              return (
+                <p className="text-lg p-2" key={`footer-p-${index}`}>
+                  {section[1]}
+                </p>
+              );
+            if (section[0] == "img")
+              return <img className="w-[75%] h-auto" src={section[1]} />;
+          })}
           <button className="close" onClick={close}>
             &times;
           </button>
