@@ -1,9 +1,54 @@
 import React from "react";
 import Popup from "reactjs-popup";
+import emailjs from "@emailjs/browser";
 import "reactjs-popup/dist/index.css";
 import { footerList } from "../constants";
+import { emailjsConfig } from "../constants/secret";
 
 const Footer = () => {
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs
+      .send(
+        emailjsConfig.SERVICE_ID,
+        emailjsConfig.TEMPLATE_ID,
+        {
+          from_name: form.first_name + form.last_name,
+          to_name: "Alex",
+          from_email: form.email,
+          to_email: emailjsConfig.MY_EMAIL,
+          message: form.message,
+        },
+        emailjsConfig.PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank you for reaching out!");
+          setForm({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Something went wrong, email not sent :(");
+        }
+      );
+  };
   return (
     <div className="w-full min-h-[80px] flex justify-start items-center justify-center bg-[#bcaaa4]">
       {footerList.map((footerSection, index) => (
@@ -28,11 +73,17 @@ const Footer = () => {
         {(close) => (
           <div className="modal w-full h-fit p-4">
             <h1 className="text-xl text-center">Contact Us</h1>
-            <form className="register-form flex flex-col justify-between m-4 gap-y-2 overflow-auto h-fit">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="register-form flex flex-col justify-between m-4 gap-y-2 overflow-auto h-fit"
+            >
               <div className="member-form-section">
                 <input
                   type="text"
                   id="floating_outlined"
+                  value={form.first_name}
+                  onChange={handleChange}
                   className="member-form-input peer"
                   placeholder=" "
                 />
@@ -47,6 +98,8 @@ const Footer = () => {
                 <input
                   type="text"
                   id="floating_outlined"
+                  value={form.last_name}
+                  onChange={handleChange}
                   className="member-form-input peer"
                   placeholder=" "
                 />
@@ -61,6 +114,8 @@ const Footer = () => {
                 <input
                   type="text"
                   id="floating_outlined"
+                  value={form.email}
+                  onChange={handleChange}
                   className="member-form-input peer"
                   placeholder=" "
                 />
@@ -81,6 +136,8 @@ const Footer = () => {
               <textarea
                 id="message"
                 rows="4"
+                value={form.message}
+                onChange={handleChange}
                 className="member-form-textarea"
                 placeholder="Write your thoughts here..."
               ></textarea>
