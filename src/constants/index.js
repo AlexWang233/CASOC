@@ -188,4 +188,17 @@ const disclaimer = {
 
 const footerList = [aboutUs, disclaimer];
 
-export { journalList, adsList, footerList };
+const membershipForm = [
+  ["name", "会员姓名"],
+  ["school", "毕业院校"],
+  ["grad_year", "毕业年份"],
+  ["post_code", "居住地邮编"],
+  ["email", "电子邮箱"],
+  ["birthday", "生日 (Optional)"],
+  ["sex", "性别 (Optional)"],
+  ["address", "家庭地址 (Optional)"],
+  ["telephone", "移动电话 (Optional)"],
+  ["occupation", "职业 (Optional)"],
+];
+
+export { journalList, adsList, footerList, membershipForm };

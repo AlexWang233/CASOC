@@ -52,7 +52,9 @@ const Footer = () => {
   return (
     <div className="w-full min-h-[80px] flex justify-start items-center justify-center bg-[#bcaaa4]">
       {footerList.map((footerSection, index) => (
-        <FooterSection props={footerSection} index={`footer-${index}`} />
+        <div key={`footer-${index}`}>
+          <FooterSection props={footerSection} />
+        </div>
       ))}
       <Popup
         modal

@@ -8,7 +8,9 @@ const Advertisements = (props) => {
     <div className="advertisement bg-gray-300 flex flex-col min-h-[100%] h-fit pb-4 max-w-[200px]">
       <div className="text-center pt-4">友情赞助</div>
       {adsList.map((ad, index) => (
-        <AdvertisementSection ad={ad} key={`ad-${index}`} />
+        <div key={`ad-${index}`}>
+          <AdvertisementSection ad={ad} />
+        </div>
       ))}
     </div>
   );
@@ -37,12 +39,18 @@ const AdvertisementSection = ({ ad }) => {
           {content.map((section, index) => {
             if (section[0] == "text")
               return (
-                <p className="text-lg p-2" key={`footer-p-${index}`}>
+                <p key={`footer-p-${index}`} className="text-lg p-2">
                   {section[1]}
                 </p>
               );
             if (section[0] == "img")
-              return <img className="w-[75%] h-auto" src={section[1]} />;
+              return (
+                <img
+                  key={`footer-p-${index}`}
+                  className="w-[75%] h-auto"
+                  src={section[1]}
+                />
+              );
           })}
           <button className="close" onClick={close}>
             &times;

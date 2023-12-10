@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import emailjs from "@emailjs/browser";
+import { membershipForm } from "../constants";
 import { AWS_Gateway_URL } from "../constants/secret";
 
 const Membership = () => {
@@ -21,6 +23,12 @@ const Membership = () => {
   });
   const service_hope = useState("");
   const event_hope = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    console.log(form[name]);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,147 +69,21 @@ const Membership = () => {
         {(close) => (
           <div className="modal w-full h-full">
             {!viewTerms ? (
-              <form className="register-form flex flex-col justify-between m-4 gap-y-2 overflow-auto">
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    会员姓名
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    毕业院校
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    毕业年份
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    居住地邮编
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    电子邮箱
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    生日(Optional)
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    性别 (Optional)：
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    家庭地址 (Optional)：
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    移动电话 (Optional)：
-                  </label>
-                </div>
-                <div className="member-form-section">
-                  <input
-                    type="text"
-                    id="floating_outlined"
-                    className="member-form-input peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_outlined"
-                    className="member-form-label"
-                  >
-                    职业 (Optional)：
-                  </label>
-                </div>
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="register-form flex flex-col justify-between m-4 gap-y-2 overflow-auto"
+              >
+                {membershipForm.map((section, index) => (
+                  <div key={`form-input-${index}`}>
+                    <FormInput
+                      name={section[0]}
+                      value={form[section[0]]}
+                      text={section[1]}
+                      handleChange={handleChange}
+                    />
+                  </div>
+                ))}
                 <label htmlFor="message" className="member-form-textarea-label">
                   希望社区能够提供的服务：
                 </label>
@@ -288,6 +170,25 @@ const Membership = () => {
           </div>
         )}
       </Popup>
+    </div>
+  );
+};
+
+const FormInput = ({ name, value, text, handleChange }) => {
+  return (
+    <div className="member-form-section">
+      <input
+        type="text"
+        id="floating_outlined"
+        name={name}
+        value={value}
+        onChange={handleChange}
+        className="member-form-input peer"
+        placeholder=" "
+      />
+      <label htmlFor="floating_outlined" className="member-form-label">
+        {text}
+      </label>
     </div>
   );
 };
