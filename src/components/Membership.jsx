@@ -7,6 +7,7 @@ import { AWS_Gateway_URL } from "../constants/secret";
 
 const Membership = () => {
   const formRef = useRef();
+  const [termChecked, setTermChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [viewTerms, setViewTerms] = useState(false);
   const [form, setForm] = useState({
@@ -24,6 +25,10 @@ const Membership = () => {
   const service_hope = useState("");
   const event_hope = useState("");
 
+  const handleTerms = (e) => {
+    setTermChecked(!termChecked);
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -33,6 +38,29 @@ const Membership = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    if (!termChecked) {
+      setLoading(false);
+      alert("请先同意服务条款，谢谢！");
+      return;
+    }
+    const required = {
+      name: "姓名",
+      school: "毕业院校",
+      grad_year: "毕业年份",
+      post_code: "居住地邮编",
+      email: "邮箱",
+    };
+
+    for (var key in required) {
+      if (form[key].length <= 1) {
+        alert("请填写" + required[key]);
+        setLoading(false);
+        return;
+      }
+    }
+
+    console.log("Proceeding");
+    setLoading(false);
     const { name, message } = this.state;
     axios.post(AWS_Gateway_URL, form).then(
       () => {
@@ -109,7 +137,13 @@ const Membership = () => {
                   >
                     查看服务条款
                   </button>
-                  <input type="submit" value="提交会员注册" />
+
+                  <button className="w-40 mr-2">
+                    <input
+                      type="submit"
+                      value={loading ? "提交中" : "提交会员注册"}
+                    />
+                  </button>
                 </div>
               </form>
             ) : (
@@ -155,7 +189,7 @@ const Membership = () => {
                 </div>
                 <div className="flex justify-center mb-2">
                   <label className="w-40 mr-2">
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={handleTerms} />
                     我同意服务条款
                   </label>
                   <button onClick={() => setViewTerms(false)}>
