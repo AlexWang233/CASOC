@@ -1,9 +1,45 @@
 import { useState } from "react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import { AWS_Gateway_URL } from "../constants/secret";
 
 const Membership = () => {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
   const [viewTerms, setViewTerms] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    school: "",
+    grad_year: "",
+    post_code: "",
+    email: "",
+    birthday: "",
+    sex: "",
+    address: "",
+    telephone: "",
+    occupation: "",
+  });
+  const service_hope = useState("");
+  const event_hope = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const { name, message } = this.state;
+    axios.post(AWS_Gateway_URL, form).then(
+      () => {
+        setLoading(false);
+        alert("Thank you for reaching out!");
+        // setForm({ name: "", email: "", message: "" });
+      },
+      (error) => {
+        setLoading(false);
+        console.log(error);
+        alert("Something went wrong, registration unsucessful :(");
+      }
+    );
+  };
+
   return (
     <div className="membership h-full flex flex-col max-w-[200px]">
       <Popup

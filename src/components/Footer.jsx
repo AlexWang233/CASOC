@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useRef } from "react";
 import Popup from "reactjs-popup";
 import emailjs from "@emailjs/browser";
 import "reactjs-popup/dist/index.css";
@@ -7,6 +7,7 @@ import { emailjsConfig } from "../constants/secret";
 
 const Footer = () => {
   const formRef = useRef();
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     first_name: "",
     last_name: "",
@@ -14,7 +15,6 @@ const Footer = () => {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -82,6 +82,7 @@ const Footer = () => {
                 <input
                   type="text"
                   id="floating_outlined"
+                  name="first_name"
                   value={form.first_name}
                   onChange={handleChange}
                   className="member-form-input peer"
@@ -98,6 +99,7 @@ const Footer = () => {
                 <input
                   type="text"
                   id="floating_outlined"
+                  name="last_name"
                   value={form.last_name}
                   onChange={handleChange}
                   className="member-form-input peer"
@@ -114,6 +116,7 @@ const Footer = () => {
                 <input
                   type="text"
                   id="floating_outlined"
+                  name="email"
                   value={form.email}
                   onChange={handleChange}
                   className="member-form-input peer"
@@ -136,13 +139,14 @@ const Footer = () => {
               <textarea
                 id="message"
                 rows="4"
+                name="message"
                 value={form.message}
                 onChange={handleChange}
                 className="member-form-textarea"
                 placeholder="Write your thoughts here..."
               ></textarea>
               <div className="flex justify-center mt-2">
-                <input type="submit" value="Send" />
+                <input type="submit" value={loading ? "Sending..." : "Send"} />
               </div>
             </form>
             <button className="close" onClick={close}>

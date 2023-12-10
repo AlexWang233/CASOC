@@ -5,4 +5,7 @@ const emailjsConfig = {
   MY_EMAIL: "alex13901350@gmail.com",
 };
 
-export { emailjsConfig };
+const AWS_Gateway_URL =
+  "https://46xfz6im50.execute-api.us-east-2.amazonaws.com/default/CASOC_Function";
+
+export { emailjsConfig, AWS_Gateway_URL };
