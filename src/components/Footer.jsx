@@ -149,10 +149,12 @@ const Footer = () => {
                   placeholder="Write your thoughts here..."
                 ></textarea>
                 <div className="flex justify-center mt-2">
-                  <input
+                  <button
                     type="submit"
-                    value={loading ? "Sending..." : "Send"}
-                  />
+                    className="p-1 pl-2 pr-2 border-2 border-black bg-gray-200"
+                  >
+                    {loading ? "发送中..." : "发送"}
+                  </button>
                 </div>
               </form>
               <button className="close" onClick={close}>

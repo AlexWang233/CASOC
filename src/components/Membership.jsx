@@ -3,7 +3,7 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import emailjs from "@emailjs/browser";
 import { membershipForm } from "../constants";
-import { AWS_Gateway_URL } from "../constants/secret";
+import { AWS_Gateway_URL, emailjsConfig } from "../constants/secret";
 
 const Membership = () => {
   const formRef = useRef();
@@ -21,6 +21,8 @@ const Membership = () => {
     address: "",
     telephone: "",
     occupation: "",
+    desired_service: "",
+    desired_event: "",
   });
   const service_hope = useState("");
   const event_hope = useState("");
@@ -51,7 +53,7 @@ const Membership = () => {
       email: "邮箱",
     };
 
-    for (var key in required) {
+    for (let key in required) {
       if (form[key].length <= 1) {
         alert("请填写" + required[key]);
         setLoading(false);
@@ -59,9 +61,44 @@ const Membership = () => {
       }
     }
 
+    var message = "新CASOC会员注册提醒 \n\n";
+    for (let i = 0; i < membershipForm.length; i++) {
+      message +=
+        membershipForm[i][1] + ": " + form[membershipForm[i][0]] + "\n";
+    }
+    message += "希望社区提供的服务： " + form.desired_service + "\n";
+    message += "希望参加的社区活动： " + form.desired_event + "\n";
+    console.log(message);
+
     console.log("Proceeding");
-    setLoading(false);
-    const { name, message } = this.state;
+    emailjs
+      .send(
+        emailjsConfig.SERVICE_ID,
+        emailjsConfig.TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Alex",
+          from_email: form.email,
+          to_email: emailjsConfig.MY_EMAIL,
+          message: message,
+        },
+        emailjsConfig.PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank you for registering!");
+          for (var key in form) {
+            setForm({ [key]: "", ...form });
+          }
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Something went wrong, email not sent :(");
+        }
+      );
+    /*
     axios.post(AWS_Gateway_URL, form).then(
       () => {
         setLoading(false);
@@ -74,6 +111,7 @@ const Membership = () => {
         alert("Something went wrong, registration unsucessful :(");
       }
     );
+    */
   };
 
   return (
@@ -117,6 +155,9 @@ const Membership = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="desired_service"
+                  value={form.desired_service}
+                  onChange={handleChange}
                   rows="4"
                   className="member-form-textarea"
                   placeholder="Write your thoughts here..."
@@ -126,6 +167,9 @@ const Membership = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="desired_event"
+                  value={form.desired_event}
+                  onChange={handleChange}
                   rows="4"
                   className="member-form-textarea"
                   placeholder="Write your thoughts here..."
@@ -139,10 +183,12 @@ const Membership = () => {
                   </button>
 
                   <button className="w-40 mr-2">
-                    <input
+                    <button
                       type="submit"
-                      value={loading ? "提交中" : "提交会员注册"}
-                    />
+                      className="p-1 pl-2 pr-2 border-2 border-black bg-gray-200"
+                    >
+                      {loading ? "提交中..." : "提交会员注册"}
+                    </button>
                   </button>
                 </div>
               </form>
