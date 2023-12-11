@@ -24,8 +24,6 @@ const Membership = () => {
     desired_service: "",
     desired_event: "",
   });
-  const service_hope = useState("");
-  const event_hope = useState("");
 
   const handleTerms = (e) => {
     setTermChecked(!termChecked);
@@ -70,7 +68,6 @@ const Membership = () => {
     message += "希望参加的社区活动： " + form.desired_event + "\n";
     console.log(message);
 
-    console.log("Proceeding");
     emailjs
       .send(
         emailjsConfig.SERVICE_ID,
@@ -127,8 +124,8 @@ const Membership = () => {
           </div>
         }
         contentStyle={{
-          width: "90%",
-          height: "90%",
+          width: "95%",
+          height: "95%",
           maxWidth: "800px",
         }}
       >
@@ -140,6 +137,7 @@ const Membership = () => {
                 onSubmit={handleSubmit}
                 className="register-form flex flex-col justify-between m-4 gap-y-2 overflow-auto"
               >
+                <h1 className="text-xl text-center pb-1">会员注册表</h1>
                 {membershipForm.map((section, index) => (
                   <div key={`form-input-${index}`}>
                     <FormInput
@@ -174,21 +172,18 @@ const Membership = () => {
                   className="member-form-textarea"
                   placeholder="Write your thoughts here..."
                 ></textarea>
-                <div className="flex justify-center mb-2">
+                <div className="flex justify-center p-2 gap-x-2">
                   <button
-                    className="w-40 mr-2"
+                    className="p-1 pl-2 pr-2 border-2 border-black bg-blue-100"
                     onClick={() => setViewTerms(true)}
                   >
                     查看服务条款
                   </button>
-
-                  <button className="w-40 mr-2">
-                    <button
-                      type="submit"
-                      className="p-1 pl-2 pr-2 border-2 border-black bg-gray-200"
-                    >
-                      {loading ? "提交中..." : "提交会员注册"}
-                    </button>
+                  <button
+                    type="submit"
+                    className="p-1 pl-2 pr-2 border-2 border-black bg-gray-200"
+                  >
+                    {loading ? "提交中..." : "提交会员注册"}
                   </button>
                 </div>
               </form>
@@ -234,11 +229,20 @@ const Membership = () => {
                   </div>
                 </div>
                 <div className="flex justify-center mb-2">
-                  <label className="w-40 mr-2">
-                    <input type="checkbox" onChange={handleTerms} />
-                    我同意服务条款
+                  <label className="p-1 pl-2 pr-2">
+                    <input
+                      type="checkbox"
+                      checked={termChecked}
+                      onChange={handleTerms}
+                    />
+                    &nbsp;我同意服务条款
                   </label>
-                  <button onClick={() => setViewTerms(false)}>
+                </div>
+                <div className="flex justify-center mb-1">
+                  <button
+                    onClick={() => setViewTerms(false)}
+                    className="p-1 pl-2 pr-2 border-2 border-black bg-blue-100"
+                  >
                     返回注册页面
                   </button>
                 </div>
