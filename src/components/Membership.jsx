@@ -4,6 +4,7 @@ import "reactjs-popup/dist/index.css";
 import emailjs from "@emailjs/browser";
 import { membershipForm } from "../constants";
 import { AWS_Gateway_URL, emailjsConfig } from "../constants/secret";
+import { resolveBaseUrl } from "vite";
 
 const Membership = () => {
   const formRef = useRef();
@@ -24,6 +25,16 @@ const Membership = () => {
     desired_service: "",
     desired_event: "",
   });
+
+  const generateCode = () => {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    const l = characters.length;
+    let res = "";
+    for (let i = 0; i < 20; i++) {
+      res += characters.charAt(Math.floor(Math.random() * l));
+    }
+    return res;
+  };
 
   const handleTerms = (e) => {
     setTermChecked(!termChecked);
@@ -60,6 +71,8 @@ const Membership = () => {
     }
 
     var message = "新CASOC会员注册提醒 \n\n";
+    const id = generateCode();
+    message += "会员ID： " + id + "\n";
     for (let i = 0; i < membershipForm.length; i++) {
       message +=
         membershipForm[i][1] + ": " + form[membershipForm[i][0]] + "\n";
@@ -74,7 +87,7 @@ const Membership = () => {
         emailjsConfig.TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "Alex",
+          to_name: "华校友联社区（CASOC）管理员",
           from_email: form.email,
           to_email: emailjsConfig.MY_EMAIL,
           message: message,
@@ -83,16 +96,42 @@ const Membership = () => {
       )
       .then(
         () => {
-          setLoading(false);
-          alert("Thank you for registering!");
-          for (var key in form) {
-            setForm({ [key]: "", ...form });
-          }
+          emailjs
+            .send(
+              emailjsConfig.SERVICE_ID,
+              emailjsConfig.TEMPLATE_ID,
+              {
+                from_name: "华校友联社区（CASOC）管理员",
+                to_name: form.name,
+                from_email: emailjsConfig.MY_EMAIL,
+                to_email: form.email,
+                message: "感谢您注册CASOC会员，您的会员ID为: " + id,
+              },
+              emailjsConfig.PUBLIC_KEY
+            )
+            .then(
+              () => {
+                setLoading(false);
+                alert("Thank you for registering!");
+                for (var key in form) {
+                  setForm({ [key]: "", ...form });
+                }
+              },
+              (error) => {
+                setLoading(false);
+                console.log(error);
+                alert(
+                  "Something went wrong, member notification email not sent :("
+                );
+              }
+            );
         },
         (error) => {
           setLoading(false);
           console.log(error);
-          alert("Something went wrong, email not sent :(");
+          alert(
+            "Something went wrong, administrator notification email not sent :("
+          );
         }
       );
     /*
