@@ -4,7 +4,6 @@ import "reactjs-popup/dist/index.css";
 import emailjs from "@emailjs/browser";
 import { membershipForm } from "../constants";
 import { AWS_Gateway_URL, emailjsConfig } from "../constants/secret";
-import { resolveBaseUrl } from "vite";
 
 const Membership = () => {
   const formRef = useRef();
