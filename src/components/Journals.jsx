@@ -61,7 +61,10 @@ const ArticleSection = ({ article }) => {
               {content
                 ? content.map((section, index) =>
                     section[0] == "text" ? (
-                      <p className="p-2 text-left" key={`article-p-${index}`}>
+                      <p
+                        className="whitespace-pre-line w-full p-2 text-left"
+                        key={`article-p-${index}`}
+                      >
                         {section[1]}
                       </p>
                     ) : (
@@ -114,7 +117,9 @@ const JournalSection = ({ journal }) => {
               {content
                 ? content.map((section, index) =>
                     section[0] == "text" ? (
-                      <p className="p-2">{section[1]}</p>
+                      <p className="whitespace-pre-line w-full p-2 text-left">
+                        {section[1]}
+                      </p>
                     ) : (
                       <img
                         className="max-w-[90%] w-auto h-auto p-2"
