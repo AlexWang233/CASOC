@@ -124,16 +124,18 @@ const JournalSection = ({ journal }) => {
                         item[1] == "text" ? (
                           <p
                             key={`journal-section-${index}-${index2}`}
-                            className={`whitespace-pre-line w-full p-1 text-left w-\[${item[0]}%\]`}
+                            className={`whitespace-pre-line p-2 text-left w-\[${item[0]}%\]`}
                           >
                             {item[2]}
                           </p>
                         ) : (
-                          <img
-                            key={`journal-section-${index}-${index2}`}
-                            className={`w-auto h-auto p-1 w-\[${item[0]}%\]`}
-                            src={item[2]}
-                          />
+                          <div className={`relative p-2 w-\[${item[0]}%\]`}>
+                            <img
+                              key={`journal-section-${index}-${index2}`}
+                              className={`inset-0 w-full object-cover`}
+                              src={item[2]}
+                            />
+                          </div>
                         )
                       )}
                     </div>

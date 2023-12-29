@@ -106,15 +106,55 @@ const communityNews = {
   color: "rose-600",
 };
 
-const communityInfo = {
+const instituteAlumni = {
   title: "校友风采",
   summary:
     "(测试用）安大略省华人社区近日举办了一场盛大的中秋节庆祝活动。位于多伦多的华人文化中心内，人们聚集观看精彩的舞狮、舞龙表演，品尝月饼及传统美食。同时，社区还为孩子们设立了灯笼制作工坊。活动中，当地政府代表也应邀出席，与华人社区领袖共同讲话，强调多元文化的和谐共处。这次的中秋庆典不仅展现了华人的传统文化，更促进了安大略省多元文化社群间的交流与理解。",
-
+  content: [
+    [
+      [
+        100,
+        "text",
+        "加拿大工程院成立于 1987 年，是一个独立、自治的非盈利组织。加拿大工程院院士是加拿大联邦政府授予在工程领域代表加拿大国家水平专家、教授的荣誉称号，并作为国家智囊团为国家层面课题立项、评审和研究提供权威意见。每年新增的院士均由同行提名和选举。以下姓氏拼音为序。",
+      ],
+    ],
+    [[100, "img", assets.university]],
+    [
+      [40, "img", assets.ce1],
+      [
+        60,
+        "text",
+        "刘泓涛 \n" +
+          "上海交通大学91届校友。加拿大多伦多大学博士，多伦多大学航空航天研究所教授。\n" +
+          "他是国际知名的飞机系统与控制研究专家，其研究已经获得了工业专利和应用，还成立了一家初创公司。\n" +
+          "他是加拿大机械工程学会和加拿大工程学会会员，以及加拿大航空航天学会和美国航空航天学会的副会员。\n" +
+          "刘泓涛同时担任上海交通大学多伦多校友会会长。",
+      ],
+    ],
+    [
+      [
+        60,
+        "text",
+        "连勇 \n" +
+          "上海交通大学安泰经济与管理学院1984届本科校友，现任上海交通大学讲席教授，电子信息与电气工程学院教授、博士生导师，加拿大工程院院士、新加坡工程院院士、美国电子工程院院士（IEEE Fellow）。\n" +
+          "连勇教授主要从事集成电路设计及数字信号处理方面的研究，是生物医学电路与系统领域公认的国际先锋人物，领导团队设计了世界第一款毫微瓦(450nW)可编程生物医学传感器接口芯片，世界第一款32通道毫微瓦脑电图芯片，首创每通道1.13微瓦多通道数字域切换神经信号记录芯片。曾获 1996 年 IEEE 电路与系统（CAS）学会 Guillemin-Cauer 奖，并入选 IEEE Fellow，同时他也是《IEEE 电路与系统会刊 II》的主编。",
+      ],
+      [40, "img", assets.ce2],
+    ],
+  ],
   picture: "",
   color: "indigo-600",
   type: "event",
 };
+
+/*
+const communityInfo = {
+  type: "list",
+  title: "校友风采",
+  content: [instutute1],
+  color: "indogo-600"
+}
+*/
 
 const insuranceFact = {
   title: "保险知识",
@@ -152,7 +192,6 @@ const insuranceFact = {
       ],
     ],
   ],
-  picture: [],
   color: "purple-400",
   type: "event",
 };
@@ -168,7 +207,7 @@ const communityService = {
 
 const journalList = [
   communityNews,
-  communityInfo,
+  instituteAlumni,
   insuranceFact,
   communityService,
 ];
