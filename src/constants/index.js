@@ -3,7 +3,7 @@ import * as assets from "../assets";
 const communityNews_Sample = {
   title: "社区活动",
   summary:
-    "(测试用）清华大学于安大略省成功举办了一场中加文化交流活动。此活动汇聚了两国知名学者、艺术家与学生，共同探讨教育、科技与艺术的前沿进展。活动现场设有中式书画展、科技成果演示以及中加合作项目的讨论。此次交流不仅深化了两地学术合作，还为在加的中国留学生提供了一个展示自己才华的平台。",
+    "(测试用）清华大学和于安大略省成功举办了一场中加文化交流活动。此活动汇聚了两国知名学者、艺术家与学生，共同探讨教育、科技与艺术的前沿进展。活动现场设有中式书画展、科技成果演示以及中加合作项目的讨论。此次交流不仅深化了两地学术合作，还为在加的中国留学生提供了一个展示自己才华的平台。",
   content: [
     [
       "text",
@@ -99,10 +99,23 @@ const event4 = {
   color: "orange-300",
 };
 
+const event5 = {
+  title: "2030 “周建成•TQC建筑杯”高校草地排球赛在万锦市成功举办",
+  content: [
+    [
+      "text",
+      "2023 年 8 月 13日，2023 “周建成•TQC建筑杯”高校草地排球赛在万锦市Bayview Reservoir Park成功举办。高校草地排球赛是多年来高校社区的传统活动。西安电子科技大学加拿大校友会已经连续三届举办了此项活动，今年共有由46个校友会组成的32支球队经过小组循环赛后分入A、B两个组别，并经过激烈的淘汰赛决出最终的名次。",
+    ],
+    ["img", assets.event3_1],
+    ["img", assets.event3_2],
+  ],
+  color: "red-300",
+};
+
 const communityNews = {
   type: "list",
   title: "社区活动",
-  content: [event1, event2, event3, event4],
+  content: [event5, event1, event2, event3, event4],
   color: "rose-600",
 };
 
