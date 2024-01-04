@@ -1,8 +1,17 @@
+/*
 const emailjsConfig = {
   SERVICE_ID: "service_g24hs3a",
   TEMPLATE_ID: "template_mfqclkd",
   PUBLIC_KEY: "DRxWuxJIb3Tn0RjWA",
   MY_EMAIL: "alex13901350@gmail.com",
+};
+*/
+
+const emailjsConfig = {
+  SERVICE_ID: "service_nvqabmj",
+  TEMPLATE_ID: "template_8vc20l9",
+  PUBLIC_KEY: "DttBUBPEsz3nsiE8j",
+  MY_EMAIL: "casoc.ca@outlook.com",
 };
 
 const AWS_Gateway_URL =

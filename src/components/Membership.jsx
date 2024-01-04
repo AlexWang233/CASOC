@@ -111,10 +111,10 @@ const Membership = () => {
             .then(
               () => {
                 setLoading(false);
-                alert("Thank you for registering!");
                 for (var key in form) {
                   setForm({ [key]: "", ...form });
                 }
+                alert("Thank you for registering!");
               },
               (error) => {
                 setLoading(false);
