@@ -2,7 +2,7 @@
   "name": "casoc",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://alexwang233.github.io",
+  "homepage": "https://AlexWang233.github.io",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
