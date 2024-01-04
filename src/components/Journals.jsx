@@ -57,19 +57,24 @@ const ArticleSection = ({ article }) => {
         <div className="modal w-full h-full">
           <div className="service-section m-4 w-full h-full">
             <h1 className="m-4 p-2 text-lg">{title}</h1>
-            <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto h-[calc(100%-100px)]">
+            <div className="flex flex-col gap-y-6 p-4 overflow-auto h-[calc(100%-100px)]">
               {content
                 ? content.map((section, index) =>
                     section[0] == "text" ? (
-                      <p className="p-2" key={`article-p-${index}`}>
+                      <p
+                        className="whitespace-pre-line w-full p-2 text-left"
+                        key={`article-p-${index}`}
+                      >
                         {section[1]}
                       </p>
                     ) : (
-                      <img
-                        className="max-w-[90%] w-auto h-auto p-2"
-                        key={`article-img-${index}`}
-                        src={section[1]}
-                      />
+                      <div className="flex justify-center">
+                        <img
+                          className="max-w-[90%] w-auto h-auto p-2"
+                          key={`article-img-${index}`}
+                          src={section[1]}
+                        />
+                      </div>
                     )
                   )
                 : summary}
@@ -110,16 +115,31 @@ const JournalSection = ({ journal }) => {
             <h1 className="m-4 p-2 text-lg">{title}</h1>
             <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto max-h-[90%]">
               {content
-                ? content.map((section, index) =>
-                    section[0] == "text" ? (
-                      <p className="p-2">{section[1]}</p>
-                    ) : (
-                      <img
-                        className="max-w-[90%] w-auto h-auto p-2"
-                        src={section[1]}
-                      />
-                    )
-                  )
+                ? content.map((section, index) => (
+                    <div
+                      key={`journal-section-${index}`}
+                      className="flex flex-row w-full p-2"
+                    >
+                      {section.map((item, index2) =>
+                        item[1] == "text" ? (
+                          <p
+                            key={`journal-section-${index}-${index2}`}
+                            className={`whitespace-pre-line p-2 text-left w-\[${item[0]}%\]`}
+                          >
+                            {item[2]}
+                          </p>
+                        ) : (
+                          <div className={`relative p-2 w-\[${item[0]}%\]`}>
+                            <img
+                              key={`journal-section-${index}-${index2}`}
+                              className={`inset-0 w-full object-cover`}
+                              src={item[2]}
+                            />
+                          </div>
+                        )
+                      )}
+                    </div>
+                  ))
                 : summary}
             </div>
           </div>

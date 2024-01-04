@@ -53,8 +53,11 @@ const event2 = {
   title: "2023-08-20 中加高校校友网球公开赛圆满结束",
   content: [
     [
-      "text",
-      "2023年8月19至20日，由上海大学加拿大校友会承办的“2023中加高校校友网球公开赛”在安大略省奥克维尔（Oakville）市历史悠久的爱普比学院（Appleby College）校园内隆重举行。",
+      [
+        ,
+        "text",
+        "2023年8月19至20日，由上海大学加拿大校友会承办的“2023中加高校校友网球公开赛”在安大略省奥克维尔（Oakville）市历史悠久的爱普比学院（Appleby College）校园内隆重举行。",
+      ],
     ],
     [
       "text",
@@ -116,20 +119,132 @@ const communityNews = {
   color: "rose-600",
 };
 
-const communityInfo = {
+const instituteAlumni = {
   title: "校友风采",
   summary:
     "(测试用）安大略省华人社区近日举办了一场盛大的中秋节庆祝活动。位于多伦多的华人文化中心内，人们聚集观看精彩的舞狮、舞龙表演，品尝月饼及传统美食。同时，社区还为孩子们设立了灯笼制作工坊。活动中，当地政府代表也应邀出席，与华人社区领袖共同讲话，强调多元文化的和谐共处。这次的中秋庆典不仅展现了华人的传统文化，更促进了安大略省多元文化社群间的交流与理解。",
+  content: [
+    [
+      [
+        100,
+        "text",
+        "加拿大工程院成立于 1987 年，是一个独立、自治的非盈利组织。加拿大工程院院士是加拿大联邦政府授予在工程领域代表加拿大国家水平专家、教授的荣誉称号，并作为国家智囊团为国家层面课题立项、评审和研究提供权威意见。每年新增的院士均由同行提名和选举。以下姓氏拼音为序。",
+      ],
+    ],
+    [[100, "img", assets.university]],
+    [
+      [40, "img", assets.ce1],
+      [
+        60,
+        "text",
+        "刘泓涛 \n" +
+          "上海交通大学91届校友。加拿大多伦多大学博士，多伦多大学航空航天研究所教授。\n" +
+          "他是国际知名的飞机系统与控制研究专家，其研究已经获得了工业专利和应用，还成立了一家初创公司。\n" +
+          "他是加拿大机械工程学会和加拿大工程学会会员，以及加拿大航空航天学会和美国航空航天学会的副会员。\n" +
+          "刘泓涛同时担任上海交通大学多伦多校友会会长。",
+      ],
+    ],
+    [
+      [
+        60,
+        "text",
+        "连勇 \n" +
+          "上海交通大学安泰经济与管理学院1984届本科校友，现任上海交通大学讲席教授，电子信息与电气工程学院教授、博士生导师，加拿大工程院院士、新加坡工程院院士、美国电子工程院院士（IEEE Fellow）。\n" +
+          "连勇教授主要从事集成电路设计及数字信号处理方面的研究，是生物医学电路与系统领域公认的国际先锋人物，领导团队设计了世界第一款毫微瓦(450nW)可编程生物医学传感器接口芯片，世界第一款32通道毫微瓦脑电图芯片，首创每通道1.13微瓦多通道数字域切换神经信号记录芯片。曾获 1996 年 IEEE 电路与系统（CAS）学会 Guillemin-Cauer 奖，并入选 IEEE Fellow，同时他也是《IEEE 电路与系统会刊 II》的主编。",
+      ],
+      [40, "img", assets.ce2],
+    ],
+    [
+      [40, "img", assets.ce3],
+      [
+        60,
+        "text",
+        "裴健 \n" +
+          "上海交通大学91届校友。加拿大西门菲沙大学裴健教授的研究领域聚焦在数据科学、大数据、数据挖掘和数据库领域，致力为各种新颖的数据密集型应用研发高效的数据分析技术，并转化为产品和商业实践。他是加拿大皇家学会(即加拿大国家科学院)和加拿大工程院院士、ACM和IEEE会士。他的研究成果在学术界和产业界产生了广泛影响。他的著作被广泛引用超过十万余次。他的若干算法被产业界及开源软件(如SPARK)广泛采用。他曾担任ACM SIGKDD主席、IEEE Transactions of Knowledge and Data Engineering (TKDE)主编及许多会议的主办者。他获得过多个重要奖项，如2017 ACM SIGKDD Innovation Award、2015 ACM SIGKDD Service Award和2014 IEEE ICDM Research Contribution Award等。",
+      ],
+    ],
+    [
+      [
+        60,
+        "text",
+        "杨春生 \n" +
+          "博士，加拿大国家研究委员会高级研究科学家。\n" +
+          "杨春生是加拿大国家研究委员会高级研究科学家，是国际知名的人工智能研究者， 在其职业生涯中，对应用AI中的机器学习、混合推理和智能系统等方向做出了重大贡献。他所开发的基于 AI 的变革性PHM（预测和健康管理）技术用于复杂系统的智能维护，目前已应用于航空航天、铁路和能源等多个行业部门，能用以提高复杂系统的可靠性和可用性。杨春生的本科就读于哈尔滨工程大学自动化学院，1983年考入上海交通大学研究生院攻读硕士研究生，1986年1月任上海交通大学计算机中心讲师，1995年9月赴日本广岛大学工学部攻读博士研究生学位，1995年9月任日本富士通公司高级工程师，1998年1月起任加拿大国家研究院计算机情报研究所研究员，1991年至1995年获日本政府文部省奖学金，后赴加拿大任职。",
+      ],
+      [40, "img", assets.ce4],
+    ],
+    [
+      [40, "img", assets.ce5],
+      [
+        60,
+        "text",
+        "张益 \n" +
+          "RTDS技术公司研发副总裁、首席技术官。\n" +
+          "世界知名的电力系统实时仿真专家。作为世界上最大的实时模拟器制造商RTDS科技公司的研发副总裁和首席技术官，亲自开发并指导了许多关键功能的开发，使实时仿真在今天的环境中发挥作用。包括新的转换器拓扑结构、可再生资源和控制现代大型电力系统的通信层接口的高级模型。\n" +
+          "他在多个IEEE/CIGRE工作组和期刊编辑委员会任职。他的工作对建立实时电力系统仿真的行业标准产生了极大的影响。\n" +
+          "他在1998年毕业于上海交通大学，师从我国电力系统数字仿真的先驱黄家裕教授，获博士学位，在阿尔伯塔大学完成博士后研究，2000年加入RTDS技术有限公司。在过去25年，他一直工作在电力系统分析领域的前沿，在实时仿真，直流输电和电压稳定方面具有专长。目前负责RTDS公司的总体战略技术方向，领导硬件、软件和模型的研发。",
+      ],
+    ],
+    [
+      [
+        60,
+        "text",
+        "朱正宏\n" +
+          "上海交通大学本硕博。朱正宏博士是约克大学机械工程系教授及约克大学空间技术讲席教授，是国际公认的航天、航天器动力学和控制、空间碎片领域的领导者。发表论文350余篇，培养高素质人才100余人。加拿大皇家学会院士、加拿大工程学院院士、加拿大机械工程学会院士、美国机械工程师学会院士、美国航空航天学会副院士。",
+      ],
+      [40, "img", assets.ce6],
+    ],
+  ],
   picture: "",
   color: "indigo-600",
   type: "event",
 };
 
+/*
+const communityInfo = {
+  type: "list",
+  title: "校友风采",
+  content: [instutute1],
+  color: "indogo-600"
+}
+*/
+
 const insuranceFact = {
   title: "保险知识",
   summary:
     "(测试用）在安大略省，购买车辆保险是驾车的法定要求。近期，由于多伦多及周边地区的交通事故增加，保险费率也相应上涨。对于安大略省的华人社群，特别是新移民，了解当地的保险政策尤为重要。保险公司通常会考虑驾驶经验、车辆型号、住址等因素来确定保费。此外，很多华人社团和机构提供关于如何选择和购买保险的讲座和咨询，帮助社区成员做出明智选择。定期比较不同公司的报价，并了解各种可能的折扣，如多车折扣或良好驾驶记录折扣，可帮助华人社群在安大略省更经济地购买车辆保险。",
-  picture: "",
+  content: [
+    [
+      [40, "img", assets.insurance1],
+      [
+        60,
+        "text",
+        "为什么陪读家长们需要一份保险? \n 众所周知，非加拿大居民在加拿大发生医疗费用巨高无比，医院挂号费大概每次在$800-$1000，每日住院费用2000-5000加币，陪读妈妈们一般在加拿大待的时间都比较长，可能需要好几年，在此期间如果没有任何保险保障的话，万一有个生病、受伤，不仅仅会带来经济上的损失，还有在人生地不熟的异国他乡，内心也会比较惶恐。陪读父母在保险公司看来都属于“低风险人群”，所以陪读父母的保险也属于“花小钱保大事儿”的类型，建议所有陪读父母在入境之前都提前购买陪读保险。",
+      ],
+    ],
+    [
+      [
+        100,
+        "text",
+        "购买陪读保险对购买人有什么要求? \n 1. 家长年龄在59岁以下. \n 2. 与孩子居住在一起(至少要在同一个城市) \n 3. 不在加拿大某个省的健康计划中 \n 4. 没有身患绝症，没有违背医生的建议旅行",
+      ],
+    ],
+    [
+      [
+        60,
+        "text",
+        "陪读保险都有哪些保障？ \n 最重要的当然是医疗保障，不管是突发生病还是意外受伤，都在受保范围内。具体内容主要包括医生费用、住院费用、检查费用、急诊费用、处方药（一般为不超过30天药量）、救护车等都包括在保险中。",
+      ],
+      [40, "img", assets.insurance2],
+    ],
+    [
+      [
+        100,
+        "text",
+        "万一发生风险需要看医生或者去医院，该如何理赔？\n 如果自己对保险条款不清楚，第一时间联系保险公司或者保险经纪，确认接下来的步骤。保险经纪会提醒看病过程中的注意事项，为顺利理赔打好基础。\n 看病时要先自己垫付吗? 绝大多数情况下如果是去诊所看医生或是去门诊看病，需要自己先垫付所有费用，最后将相关的收据等文件寄给保险公司索赔。如果是比较严重的情况，需要住院则需要先致电保险公司，自己不需要垫付，保险公司会直接与医院结算。\n 在Walk-in-clinic就诊或看门诊后如何理赔？ 离开诊所前，应向医生或诊所索取有关的医师报告或当日病例记录，保留好看病的原始收据及处方药原始收据。\n 去医院就诊如何理赔？在入院后，必须尽快（24小时以内）与保险公司联系，保险公司会立刻给出理赔号码，医院通常会直接将账单寄往保险公司。如果已付费，请将已填写好并签字的理赔表格，及所有有关住院账单原件和原始付款收据一同寄往保险公司。",
+      ],
+    ],
+  ],
   color: "purple-400",
   type: "event",
 };
@@ -145,14 +260,20 @@ const communityService = {
 
 const journalList = [
   communityNews,
-  communityInfo,
+  instituteAlumni,
   insuranceFact,
   communityService,
 ];
 
 const cscAd = {
   img: assets.csc,
-  info: "(测试用）CSC Insurance 是一家全球性的保险公司，致力于为客户提供创新和量身定制的保险解决方案。公司的产品和服务涵盖了生活、健康、车辆和产业保险等多个领域。CSC Insurance借助先进的技术和数字化工具，提供了一个简易和透明的购买流程，以及高效的理赔服务。公司的核心价值观是以客户为中心，不断创新，并维持对所有利益相关者的诚信和责任。",
+  content: [
+    ["img", assets.csc],
+    [
+      "text",
+      "(测试用）CSC Insurance 是一家全球性的保险公司，致力于为客户提供创新和量身定制的保险解决方案。公司的产品和服务涵盖了生活、健康、车辆和产业保险等多个领域。CSC Insurance借助先进的技术和数字化工具，提供了一个简易和透明的购买流程，以及高效的理赔服务。公司的核心价值观是以客户为中心，不断创新，并维持对所有利益相关者的诚信和责任。",
+    ],
+  ],
 };
 
 const adsList = [cscAd];
@@ -160,21 +281,52 @@ const adsList = [cscAd];
 const aboutUs = {
   title: "About Us",
   content: [
-    "Founded to celebrate the unique blend of Chinese traditions and Canadian multicultural values, the Chinese Alumni Society of Canada (CASC) has grown to become a vital network for Chinese alumni nationwide. Our mission is to deepen connections among alumni, fostering both professional and personal growth. We cherish the experiences our members gained in Canada and work to ensure those memories continue to enrich their lives.",
-    "At the heart of CASC lies a commitment to community. Through events and mentorship programs, we not only cultivate a sense of belonging but also bridge the gap between our members and the broader Canadian society. Collaboration with educational institutions and businesses magnifies our impact, offering scholarships and spearheading community initiatives.",
-    "As we look to the future, CASC embraces the digital age, investing in platforms that enhance connectivity, ensuring our community remains vibrant, empowered, and inspired.",
+    [
+      "text",
+      "Founded to celebrate the unique blend of Chinese traditions and Canadian multicultural values, the Chinese Alumni Society of Canada (CASC) has grown to become a vital network for Chinese alumni nationwide. Our mission is to deepen connections among alumni, fostering both professional and personal growth. We cherish the experiences our members gained in Canada and work to ensure those memories continue to enrich their lives.",
+    ],
+    [
+      "text",
+      "At the heart of CASC lies a commitment to community. Through events and mentorship programs, we not only cultivate a sense of belonging but also bridge the gap between our members and the broader Canadian society. Collaboration with educational institutions and businesses magnifies our impact, offering scholarships and spearheading community initiatives.",
+    ],
+    [
+      "text",
+      "As we look to the future, CASC embraces the digital age, investing in platforms that enhance connectivity, ensuring our community remains vibrant, empowered, and inspired.",
+    ],
   ],
 };
 
 const disclaimer = {
   title: "Disclaimer",
   content: [
-    "This website is the official platform of the Chinese Alumni Society of Canada (CASOC). While we make every effort to ensure the accuracy and currency of the information presented, all content, information, and materials provided herein are for reference purposes only. CASOC shall not be liable for any direct or indirect losses arising from reliance on the information available on this website.",
-    "Links to third-party sites or references to third-party content are provided for the convenience of our users. CASOC holds no responsibility for the content or accuracy of these external sites. Users are encouraged to exercise discretion and judgment when accessing third-party links.",
-    "We recommend users to further verify and seek expert consultation before relying on any information presented. By using this website, you agree to and accept the terms and conditions outlined in this disclaimer.",
+    [
+      "text",
+      "This website is the official platform of the Chinese Alumni Society of Canada (CASOC). While we make every effort to ensure the accuracy and currency of the information presented, all content, information, and materials provided herein are for reference purposes only. CASOC shall not be liable for any direct or indirect losses arising from reliance on the information available on this website.",
+    ],
+    [
+      "text",
+      "Links to third-party sites or references to third-party content are provided for the convenience of our users. CASOC holds no responsibility for the content or accuracy of these external sites. Users are encouraged to exercise discretion and judgment when accessing third-party links.",
+    ],
+    [
+      "text",
+      "We recommend users to further verify and seek expert consultation before relying on any information presented. By using this website, you agree to and accept the terms and conditions outlined in this disclaimer.",
+    ],
   ],
 };
 
 const footerList = [aboutUs, disclaimer];
 
-export { journalList, adsList, footerList };
+const membershipForm = [
+  ["name", "会员姓名"],
+  ["school", "毕业院校"],
+  ["grad_year", "毕业年份"],
+  ["post_code", "居住地邮编"],
+  ["email", "电子邮箱"],
+  ["birthday", "生日 (Optional)"],
+  ["sex", "性别 (Optional)"],
+  ["address", "家庭地址 (Optional)"],
+  ["telephone", "移动电话 (Optional)"],
+  ["occupation", "职业 (Optional)"],
+];
+
+export { journalList, adsList, footerList, membershipForm };

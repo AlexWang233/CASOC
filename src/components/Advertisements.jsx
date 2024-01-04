@@ -8,14 +8,16 @@ const Advertisements = (props) => {
     <div className="advertisement bg-gray-300 flex flex-col min-h-[100%] h-fit pb-4 max-w-[200px]">
       <div className="text-center pt-4">友情赞助</div>
       {adsList.map((ad, index) => (
-        <AdvertisementSection ad={ad} key={`ad-${index}`} />
+        <div key={`ad-${index}`}>
+          <AdvertisementSection ad={ad} />
+        </div>
       ))}
     </div>
   );
 };
 
 const AdvertisementSection = ({ ad }) => {
-  const { img, info } = ad;
+  const { img, content } = ad;
   return (
     <Popup
       modal
@@ -34,8 +36,22 @@ const AdvertisementSection = ({ ad }) => {
     >
       {(close) => (
         <div className="modal w-full h-full flex flex-col justify-around items-center">
-          <img className="w-[75%] h-auto" src={img} />
-          <p className="text-lg p-2">{info}</p>
+          {content.map((section, index) => {
+            if (section[0] == "text")
+              return (
+                <p key={`footer-p-${index}`} className="text-lg p-2">
+                  {section[1]}
+                </p>
+              );
+            if (section[0] == "img")
+              return (
+                <img
+                  key={`footer-p-${index}`}
+                  className="w-[75%] h-auto"
+                  src={section[1]}
+                />
+              );
+          })}
           <button className="close" onClick={close}>
             &times;
           </button>
