@@ -8,15 +8,19 @@ const Journals = (props) => (
   <div className="journals flex flex-col justify-between ml-4 mr-4 min-h-[100%] h-fit">
     {journalList.map((journal, index) =>
       journal.type == "list" ? (
-        <JournalListSection journal={journal} key={`journal-${index}`} />
+        <React.Fragment key={`journal-list-${index}`}>
+          <JournalListSection journal={journal} index={index} />
+        </React.Fragment>
       ) : (
-        <JournalSection journal={journal} key={`journal-${index}`} />
+        <React.Fragment key={`journal-${index}`}>
+          <JournalSection journal={journal} />
+        </React.Fragment>
       )
     )}
   </div>
 );
 
-const JournalListSection = ({ journal }) => {
+const JournalListSection = ({ journal, index }) => {
   const { color, content, title } = journal;
   return (
     <div
@@ -25,7 +29,9 @@ const JournalListSection = ({ journal }) => {
       <p className={`text-${color} text-xl mb-1`}>{title}</p>
       <div className=" overflow-auto flex flex-col items-center w-full w-max-full pl-4 pr-4">
         {content.map((article, index) => (
-          <ArticleSection article={article} key={`article-${index}`} />
+          <React.Fragment key={`article-${index}`}>
+            <ArticleSection article={article} />
+          </React.Fragment>
         ))}
       </div>
     </div>
@@ -74,6 +80,7 @@ const ArticleSection = ({ article }) => {
                           </p>
                         ) : (
                           <div
+                            key={`journal-section-${index}-${index2}`}
                             className={`relative p-2 w-\[${item[0]}%\] m-auto`}
                           >
                             <img
