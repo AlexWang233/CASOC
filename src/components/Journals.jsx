@@ -73,7 +73,9 @@ const ArticleSection = ({ article }) => {
                             {item[2]}
                           </p>
                         ) : (
-                          <div className={`relative p-2 w-\[${item[0]}%\]`}>
+                          <div
+                            className={`relative p-2 w-\[${item[0]}%\] m-auto`}
+                          >
                             <img
                               key={`journal-section-${index}-${index2}`}
                               className={`inset-0 w-full object-cover`}
