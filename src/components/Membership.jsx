@@ -10,7 +10,7 @@ const Membership = () => {
   const [termChecked, setTermChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [viewTerms, setViewTerms] = useState(false);
-  const [form, setForm] = useState({
+  const emptyForm = {
     name: "",
     school: "",
     grad_year: "",
@@ -23,14 +23,26 @@ const Membership = () => {
     occupation: "",
     desired_service: "",
     desired_event: "",
-  });
+  };
+
+  const [form, setForm] = useState(emptyForm);
 
   const generateCode = () => {
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numbers = "1234567890";
     const l = characters.length;
+    const l2 = numbers.length;
     let res = "";
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 4; i++) {
+      res += numbers.charAt(Math.floor(Math.random() * l2));
+    }
+    res += "-";
+    for (let i = 0; i < 4; i++) {
       res += characters.charAt(Math.floor(Math.random() * l));
+    }
+    res += "-";
+    for (let i = 0; i < 4; i++) {
+      res += numbers.charAt(Math.floor(Math.random() * l2));
     }
     return res;
   };
@@ -83,11 +95,11 @@ const Membership = () => {
     emailjs
       .send(
         emailjsConfig.SERVICE_ID,
-        emailjsConfig.TEMPLATE_ID,
+        emailjsConfig.ADMIN_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "华校友联社区（CASOC）管理员",
-          from_email: form.email,
+          from_email: emailjsConfig.MY_EMAIL,
           to_email: emailjsConfig.MY_EMAIL,
           message: message,
         },
@@ -98,22 +110,21 @@ const Membership = () => {
           emailjs
             .send(
               emailjsConfig.SERVICE_ID,
-              emailjsConfig.TEMPLATE_ID,
+              emailjsConfig.USER_TEMPLATE_ID,
               {
                 from_name: "华校友联社区（CASOC）管理员",
                 to_name: form.name,
                 from_email: emailjsConfig.MY_EMAIL,
                 to_email: form.email,
-                message: "感谢您注册CASOC会员，您的会员ID为: " + id,
+                message: id,
               },
               emailjsConfig.PUBLIC_KEY
             )
             .then(
               () => {
+                setForm(emptyForm);
                 setLoading(false);
-                for (var key in form) {
-                  setForm({ [key]: "", ...form });
-                }
+                console.log(form);
                 alert("Thank you for registering!");
               },
               (error) => {
