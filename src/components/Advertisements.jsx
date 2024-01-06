@@ -37,7 +37,7 @@ const AdvertisementSection = ({ ad }) => {
         <div className="modal w-full h-full">
           <div className="service-section m-4 w-full h-full">
             <h1 className="m-2 p-2 text-lg">{title}</h1>
-            <div className="flex flex-col gap-y-6 p-4 overflow-auto h-[calc(100%-60px)]">
+            <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto h-[calc(100%-60px)]">
               {content.map((section, index) => {
                 if (section[0] == "text")
                   return (
