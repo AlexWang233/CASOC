@@ -63,7 +63,7 @@ const ArticleSection = ({ article }) => {
         <div className="modal w-full h-full">
           <div className="service-section m-4 w-full h-full">
             <h1 className="m-2 p-2 text-lg">{title}</h1>
-            <div className="flex flex-col gap-y-6 p-4 overflow-auto h-[calc(100%-60px)]">
+            <div className="flex flex-col p-4 overflow-auto h-[calc(100%-60px)]">
               {content
                 ? content.map((section, index) => (
                     <div
@@ -73,15 +73,17 @@ const ArticleSection = ({ article }) => {
                       {section.map((item, index2) =>
                         item[1] == "text" ? (
                           <p
+                            style={{ width: `${item[0]}%` }}
                             key={`journal-section-${index}-${index2}`}
-                            className={`whitespace-pre-line p-2 text-left w-\[${item[0]}%\]`}
+                            className={`whitespace-pre-line p-2 text-left`}
                           >
                             {item[2]}
                           </p>
                         ) : (
                           <div
+                            style={{ width: `${item[0]}%` }}
                             key={`journal-section-${index}-${index2}`}
-                            className={`relative p-2 w-\[${item[0]}%\] m-auto`}
+                            className={`relative p-2 m-2 m-auto`}
                           >
                             <img
                               key={`journal-section-${index}-${index2}`}
@@ -139,13 +141,17 @@ const JournalSection = ({ journal }) => {
                       {section.map((item, index2) =>
                         item[1] == "text" ? (
                           <p
+                            style={{ width: `${item[0]}%` }}
                             key={`journal-section-${index}-${index2}`}
-                            className={`whitespace-pre-line p-2 text-left w-\[${item[0]}%\]`}
+                            className={`whitespace-pre-line p-2 text-left`}
                           >
                             {item[2]}
                           </p>
                         ) : (
-                          <div className={`relative p-2 w-\[${item[0]}%\]`}>
+                          <div
+                            style={{ width: `${item[0]}%` }}
+                            className={`relative p-2 min-w-\[${item[0]}%\]`}
+                          >
                             <img
                               key={`journal-section-${index}-${index2}`}
                               className={`inset-0 w-full object-cover`}
