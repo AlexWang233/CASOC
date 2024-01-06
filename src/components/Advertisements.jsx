@@ -62,7 +62,7 @@ const AdvertisementSection = ({ ad }) => {
                       href={section[1]}
                       className={`whitespace-pre-line p-2 text-left w-full underline text-blue-500`}
                     >
-                      {section[1]}
+                      {section[2]}
                     </a>
                   );
               })}

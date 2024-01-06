@@ -352,7 +352,7 @@ const cscAd = {
       "text",
       "CSC Insurance 代理20多家加拿大领先的商业保险公司, 精办私人车辆房屋保险, 各类商业财产和责任保险CGL, 为客户提供最优质的专业服务, 包括为客户量身定做的产品组合, 极具竞争力的产品价格, 免费的保险咨询和产品评估, 以及相关后续服务.",
     ],
-    ["link", "https://www.cscinsurance.ca"],
+    ["link", "https://www.cscinsurance.ca", "www.cscinsurance.ca"],
     ["text", "7300 Warden Avenue, Unit 211 \n" + "Markham, ON L3R 9Z6"],
     ["text", "Hours \n" + "Monday–Friday \n" + "8:30am–6:30pm"],
     [
