@@ -17,7 +17,7 @@ const Advertisements = (props) => {
 };
 
 const AdvertisementSection = ({ ad }) => {
-  const { img, content } = ad;
+  const { title, img, content } = ad;
   return (
     <Popup
       modal
@@ -28,30 +28,46 @@ const AdvertisementSection = ({ ad }) => {
         </button>
       }
       contentStyle={{
-        width: "80%",
-        height: "80%",
-        maxWidth: "800px",
-        maxHeight: "600px",
+        width: "90%",
+        height: "90%",
+        maxWidth: "1000px",
       }}
     >
       {(close) => (
-        <div className="modal w-full h-full flex flex-col justify-around items-center">
-          {content.map((section, index) => {
-            if (section[0] == "text")
-              return (
-                <p key={`footer-p-${index}`} className="text-lg p-2">
-                  {section[1]}
-                </p>
-              );
-            if (section[0] == "img")
-              return (
-                <img
-                  key={`footer-p-${index}`}
-                  className="w-[75%] h-auto"
-                  src={section[1]}
-                />
-              );
-          })}
+        <div className="modal w-full h-full">
+          <div className="service-section m-4 w-full h-full">
+            <h1 className="m-2 p-2 text-lg">{title}</h1>
+            <div className="flex flex-col gap-y-6 p-4 overflow-auto h-[calc(100%-60px)]">
+              {content.map((section, index) => {
+                if (section[0] == "text")
+                  return (
+                    <p
+                      key={`footer-p-${index}`}
+                      className={`whitespace-pre-line p-2 text-left w-full`}
+                    >
+                      {section[1]}
+                    </p>
+                  );
+                if (section[0] == "img")
+                  return (
+                    <img
+                      key={`footer-p-${index}`}
+                      className="w-[75%] h-auto"
+                      src={section[1]}
+                    />
+                  );
+                if (section[0] == "link")
+                  return (
+                    <a
+                      href={section[1]}
+                      className={`whitespace-pre-line p-2 text-left w-full underline text-blue-500`}
+                    >
+                      {section[1]}
+                    </a>
+                  );
+              })}
+            </div>
+          </div>
           <button className="close" onClick={close}>
             &times;
           </button>

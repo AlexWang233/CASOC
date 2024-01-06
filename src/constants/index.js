@@ -337,11 +337,29 @@ const journalList = [
 
 const cscAd = {
   img: assets.csc,
+  title: "CSC Insurance",
   content: [
-    ["img", assets.csc],
+    ["img", assets.panNingBusinessCard],
     [
       "text",
-      "(测试用）CSC Insurance 是一家全球性的保险公司，致力于为客户提供创新和量身定制的保险解决方案。公司的产品和服务涵盖了生活、健康、车辆和产业保险等多个领域。CSC Insurance借助先进的技术和数字化工具，提供了一个简易和透明的购买流程，以及高效的理赔服务。公司的核心价值观是以客户为中心，不断创新，并维持对所有利益相关者的诚信和责任。",
+      "CSC Insurance is an independent insurance brokerage serving the Greater Toronto Area. Partnering with the best insurers in Canada, our team of licensed brokers are here to help you find insurance solutions that fit your life. Whether it be auto, home, business, or travel insurance, let our experts work for you by finding you the lowest quotes and best coverage.",
+    ],
+    [
+      "text",
+      "We are here to happily answer any questions and get you started on your journey to find the coverage that fits your lifestyle. Our team of licensed brokers can serve you in English, Cantonese, and Mandarin.",
+    ],
+    [
+      "text",
+      "CSC Insurance 代理20多家加拿大领先的商业保险公司, 精办私人车辆房屋保险, 各类商业财产和责任保险CGL, 为客户提供最优质的专业服务, 包括为客户量身定做的产品组合, 极具竞争力的产品价格, 免费的保险咨询和产品评估, 以及相关后续服务.",
+    ],
+    ["link", "https://www.cscinsurance.ca"],
+    ["text", "7300 Warden Avenue, Unit 211 \n" + "Markham, ON L3R 9Z6"],
+    ["text", "Hours \n" + "Monday–Friday \n" + "8:30am–6:30pm"],
+    [
+      "text",
+      "Email: info@cscinsurance.ca \n" +
+        "Phone: (905) 770-5511 \n" +
+        "Fax: (905) 770-5533",
     ],
   ],
 };

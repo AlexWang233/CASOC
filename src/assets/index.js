@@ -2,6 +2,7 @@ import ontario1 from "./Ontario1.jpg";
 import ontario2 from "./Ontario2.png";
 import ontario3 from "./Ontario3.webp";
 import csc from "./CSC.png";
+import panNingBusinessCard from "./PanNingBusinessCard.png";
 import event1_1 from "./event1.1.jpg";
 import event2_1 from "./event2.1.jpg";
 import event2_2 from "./event2.2.png";
@@ -22,6 +23,7 @@ export {
   ontario2,
   ontario3,
   csc,
+  panNingBusinessCard,
   event1_1,
   event2_1,
   event2_2,

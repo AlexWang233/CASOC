@@ -62,8 +62,8 @@ const ArticleSection = ({ article }) => {
       {(close) => (
         <div className="modal w-full h-full">
           <div className="service-section m-4 w-full h-full">
-            <h1 className="m-4 p-2 text-lg">{title}</h1>
-            <div className="flex flex-col gap-y-6 p-4 overflow-auto h-[calc(100%-100px)]">
+            <h1 className="m-2 p-2 text-lg">{title}</h1>
+            <div className="flex flex-col gap-y-6 p-4 overflow-auto h-[calc(100%-60px)]">
               {content
                 ? content.map((section, index) => (
                     <div
@@ -128,7 +128,7 @@ const JournalSection = ({ journal }) => {
       {(close) => (
         <div className="modal w-full h-full">
           <div className="service-section m-4 w-full h-full">
-            <h1 className="m-4 p-2 text-lg">{title}</h1>
+            <h1 className="m-2 p-2 text-lg">{title}</h1>
             <div className="flex flex-col items-center gap-y-6 p-4 overflow-auto max-h-[90%]">
               {content
                 ? content.map((section, index) => (
